@@ -2,6 +2,10 @@
 #import "NextArrivalViewController.h"
 #import "DirectionsFetcher.h"
 
+#if RUN_KIF_TESTS
+#import "STestController.h"
+#endif
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -13,6 +17,14 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+#if RUN_KIF_TESTS
+    [[STestController sharedInstance] startTestingWithCompletionBlock:^{
+        // Exit after the tests complete so that CI knows we're done
+        exit([[STestController sharedInstance] failureCount]);
+    }];
+#endif
+    
     return YES;
 }
 

@@ -23,6 +23,18 @@
 		49965EFC15E95C4D008B516D /* NextArrivalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFA15E95C4D008B516D /* NextArrivalViewController.m */; };
 		49965F0015E96069008B516D /* DirectionsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFF15E96069008B516D /* DirectionsFetcher.m */; };
 		49965F0115E96069008B516D /* DirectionsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFF15E96069008B516D /* DirectionsFetcher.m */; };
+		49965F0D15E9666D008B516D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EBF15E954F1008B516D /* main.m */; };
+		49965F0E15E9666D008B516D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EC315E954F1008B516D /* AppDelegate.m */; };
+		49965F0F15E9666D008B516D /* NextArrivalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFA15E95C4D008B516D /* NextArrivalViewController.m */; };
+		49965F1015E9666D008B516D /* DirectionsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFF15E96069008B516D /* DirectionsFetcher.m */; };
+		49965F1215E9666D008B516D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB315E954F1008B516D /* UIKit.framework */; };
+		49965F1315E9666D008B516D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB515E954F1008B516D /* Foundation.framework */; };
+		49965F1415E9666D008B516D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB715E954F1008B516D /* CoreGraphics.framework */; };
+		49965F1615E9666D008B516D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49965EBC15E954F1008B516D /* InfoPlist.strings */; };
+		49965F1D15E9669B008B516D /* libKIF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965F0A15E9665D008B516D /* libKIF.a */; };
+		49965F2115E9673F008B516D /* STestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965F2015E9673F008B516D /* STestController.m */; };
+		49965F2415E9678F008B516D /* KIFTestScenario+SAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965F2315E9678F008B516D /* KIFTestScenario+SAdditions.m */; };
+		49965F2715E9686F008B516D /* KIFTestStep+SAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965F2615E9686F008B516D /* KIFTestStep+SAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +73,13 @@
 			remoteGlobalIDString = A3B16542139967B800E9CC6E;
 			remoteInfo = KiwiExamples;
 		};
+		49965F0915E9665D008B516D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49965F0215E9665D008B516D /* KIF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AAB07268139719AC008AF393;
+			remoteInfo = KIF;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +103,15 @@
 		49965EFA15E95C4D008B516D /* NextArrivalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextArrivalViewController.m; sourceTree = "<group>"; };
 		49965EFE15E96069008B516D /* DirectionsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionsFetcher.h; sourceTree = "<group>"; };
 		49965EFF15E96069008B516D /* DirectionsFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionsFetcher.m; sourceTree = "<group>"; };
+		49965F0215E9665D008B516D /* KIF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KIF.xcodeproj; path = Frameworks/KIF/KIF.xcodeproj; sourceTree = "<group>"; };
+		49965F1A15E9666D008B516D /* StopsEndEndTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopsEndEndTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49965F1C15E9666E008B516D /* Stops copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Stops copy-Info.plist"; path = "/Users/andrew/dev/Stops/Stops copy-Info.plist"; sourceTree = "<absolute>"; };
+		49965F1F15E9673F008B516D /* STestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STestController.h; path = StopsEndEndTests/STestController.h; sourceTree = "<group>"; };
+		49965F2015E9673F008B516D /* STestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STestController.m; path = StopsEndEndTests/STestController.m; sourceTree = "<group>"; };
+		49965F2215E9678F008B516D /* KIFTestScenario+SAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KIFTestScenario+SAdditions.h"; path = "StopsEndEndTests/KIFTestScenario+SAdditions.h"; sourceTree = "<group>"; };
+		49965F2315E9678F008B516D /* KIFTestScenario+SAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "KIFTestScenario+SAdditions.m"; path = "StopsEndEndTests/KIFTestScenario+SAdditions.m"; sourceTree = "<group>"; };
+		49965F2515E9686F008B516D /* KIFTestStep+SAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KIFTestStep+SAdditions.h"; path = "StopsEndEndTests/KIFTestStep+SAdditions.h"; sourceTree = "<group>"; };
+		49965F2615E9686F008B516D /* KIFTestStep+SAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "KIFTestStep+SAdditions.m"; path = "StopsEndEndTests/KIFTestStep+SAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +136,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49965F1115E9666D008B516D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49965F1D15E9669B008B516D /* libKIF.a in Frameworks */,
+				49965F1215E9666D008B516D /* UIKit.framework in Frameworks */,
+				49965F1315E9666D008B516D /* Foundation.framework in Frameworks */,
+				49965F1415E9666D008B516D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -116,8 +155,10 @@
 			children = (
 				49965EB915E954F1008B516D /* Stops */,
 				49965ED115E954F1008B516D /* StopsTests */,
+				49965F1E15E96712008B516D /* StopsEndEndTests */,
 				49965EB215E954F1008B516D /* Frameworks */,
 				49965EB015E954F1008B516D /* Products */,
+				49965F1C15E9666E008B516D /* Stops copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +167,7 @@
 			children = (
 				49965EAF15E954F1008B516D /* Stops.app */,
 				49965ECA15E954F1008B516D /* StopsTests.octest */,
+				49965F1A15E9666D008B516D /* StopsEndEndTests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				49965EE215E956A0008B516D /* Kiwi.xcodeproj */,
+				49965F0215E9665D008B516D /* KIF.xcodeproj */,
 				49965EB315E954F1008B516D /* UIKit.framework */,
 				49965EB515E954F1008B516D /* Foundation.framework */,
 				49965EB715E954F1008B516D /* CoreGraphics.framework */,
@@ -212,6 +255,27 @@
 			name = Fetchers;
 			sourceTree = "<group>";
 		};
+		49965F0315E9665D008B516D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49965F0A15E9665D008B516D /* libKIF.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49965F1E15E96712008B516D /* StopsEndEndTests */ = {
+			isa = PBXGroup;
+			children = (
+				49965F1F15E9673F008B516D /* STestController.h */,
+				49965F2015E9673F008B516D /* STestController.m */,
+				49965F2215E9678F008B516D /* KIFTestScenario+SAdditions.h */,
+				49965F2315E9678F008B516D /* KIFTestScenario+SAdditions.m */,
+				49965F2515E9686F008B516D /* KIFTestStep+SAdditions.h */,
+				49965F2615E9686F008B516D /* KIFTestStep+SAdditions.m */,
+			);
+			name = StopsEndEndTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -251,6 +315,23 @@
 			productReference = 49965ECA15E954F1008B516D /* StopsTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		49965F0B15E9666D008B516D /* StopsEndEndTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49965F1715E9666D008B516D /* Build configuration list for PBXNativeTarget "StopsEndEndTests" */;
+			buildPhases = (
+				49965F0C15E9666D008B516D /* Sources */,
+				49965F1115E9666D008B516D /* Frameworks */,
+				49965F1515E9666D008B516D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StopsEndEndTests;
+			productName = Stops;
+			productReference = 49965F1A15E9666D008B516D /* StopsEndEndTests.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -272,6 +353,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 49965F0315E9665D008B516D /* Products */;
+					ProjectRef = 49965F0215E9665D008B516D /* KIF.xcodeproj */;
+				},
+				{
 					ProductGroup = 49965EE315E956A0008B516D /* Products */;
 					ProjectRef = 49965EE215E956A0008B516D /* Kiwi.xcodeproj */;
 				},
@@ -280,6 +365,7 @@
 			targets = (
 				49965EAE15E954F1008B516D /* Stops */,
 				49965EC915E954F1008B516D /* StopsTests */,
+				49965F0B15E9666D008B516D /* StopsEndEndTests */,
 			);
 		};
 /* End PBXProject section */
@@ -313,6 +399,13 @@
 			remoteRef = 49965EF315E956A0008B516D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		49965F0A15E9665D008B516D /* libKIF.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libKIF.a;
+			remoteRef = 49965F0915E9665D008B516D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -329,6 +422,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				49965ED615E954F1008B516D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49965F1515E9666D008B516D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49965F1615E9666D008B516D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +470,20 @@
 				49965ED915E954F1008B516D /* NextArrivalSpec.m in Sources */,
 				49965EFC15E95C4D008B516D /* NextArrivalViewController.m in Sources */,
 				49965F0115E96069008B516D /* DirectionsFetcher.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49965F0C15E9666D008B516D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49965F0D15E9666D008B516D /* main.m in Sources */,
+				49965F0E15E9666D008B516D /* AppDelegate.m in Sources */,
+				49965F0F15E9666D008B516D /* NextArrivalViewController.m in Sources */,
+				49965F1015E9666D008B516D /* DirectionsFetcher.m in Sources */,
+				49965F2115E9673F008B516D /* STestController.m in Sources */,
+				49965F2415E9678F008B516D /* KIFTestScenario+SAdditions.m in Sources */,
+				49965F2715E9686F008B516D /* KIFTestStep+SAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +630,54 @@
 			};
 			name = Release;
 		};
+		49965F1815E9666D008B516D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Stops/Stops-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"RUN_KIF_TESTS=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks/KIF/**",
+				);
+				INFOPLIST_FILE = "Stops copy-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = StopsEndEndTests;
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		49965F1915E9666D008B516D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Stops/Stops-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"RUN_KIF_TESTS=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks/KIF/**",
+				);
+				INFOPLIST_FILE = "Stops copy-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = StopsEndEndTests;
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -534,6 +697,7 @@
 				49965EDE15E954F1008B516D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49965EDF15E954F1008B516D /* Build configuration list for PBXNativeTarget "StopsTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +706,16 @@
 				49965EE115E954F1008B516D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49965F1715E9666D008B516D /* Build configuration list for PBXNativeTarget "StopsEndEndTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49965F1815E9666D008B516D /* Debug */,
+				49965F1915E9666D008B516D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

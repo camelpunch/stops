@@ -2,9 +2,11 @@
 
 @class DirectionsFetcher;
 
-@interface NextArrivalViewController : UIViewController
+@interface NextArrivalViewController : UIViewController<UITextFieldDelegate>
 
-@property (weak, nonatomic) UIButton *findButton;
+@property (strong, nonatomic) UIButton *findButton;
+@property (strong, nonatomic) UITextField *routeField;
+@property (strong, nonatomic) UIActivityIndicatorView *spinner;
 
 - (id)initWithFetcher:(DirectionsFetcher *)fetcher;
 - (void)findButtonClicked;

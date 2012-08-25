@@ -10,6 +10,8 @@
     DirectionsFetcher *_fetcher;
 }
 @synthesize findButton;
+@synthesize routeField;
+@synthesize spinner;
 
 - (id)initWithFetcher:(DirectionsFetcher *)fetcher
 {
@@ -33,15 +35,35 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.spinner.center = self.view.center;
+    [self.view addSubview:self.spinner];
+    
+    // field
+    self.routeField = [[UITextField alloc] initWithFrame:CGRectMake(50, 100, 200, 40)];
+    self.routeField.borderStyle = UITextBorderStyleRoundedRect;
+    self.routeField.font = [UIFont systemFontOfSize:15];
+    self.routeField.placeholder = @"Enter Route #";
+    self.routeField.accessibilityLabel = @"Enter Route";
+    self.routeField.autocorrectionType = UITextAutocorrectionTypeNo;
+    self.routeField.keyboardType = UIKeyboardTypeNumberPad;
+    self.routeField.returnKeyType = UIReturnKeySearch;
+    self.routeField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.routeField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    self.routeField.delegate = self;
+    [self.view addSubview:self.routeField];
+
+    // button
     self.findButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [self.findButton setFrame:CGRectMake(50, 300, 200, 80)];
+    [self.findButton setFrame:CGRectMake(50, 140, 200, 80)];
     [self.findButton setTitle:@"Find"
                      forState:UIControlStateNormal];
     [self.findButton addTarget:self
                         action:@selector(findButtonClicked)
               forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.findButton];
+    
+    [self.view addSubview:self.findButton];    
 }
 
 - (void)viewDidUnload
@@ -57,8 +79,9 @@
 
 - (void)findButtonClicked
 {
-    NSLog(@"Clicked!");
-    [_fetcher fetchDirectionsForRoute:@"22"];
+    [self.view endEditing:NO];
+    [self.spinner startAnimating];
+    [_fetcher fetchDirectionsForRoute:self.routeField.text];
 }
 
 @end
