@@ -1,11 +1,3 @@
-//
-//  main.m
-//  Stops
-//
-//  Created by Andrew Bruce on 25/08/2012.
-//  Copyright (c) 2012 Andrew Bruce. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 #import "AppDelegate.h"

@@ -17,8 +17,12 @@
 		49965ECD15E954F1008B516D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB315E954F1008B516D /* UIKit.framework */; };
 		49965ECE15E954F1008B516D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB515E954F1008B516D /* Foundation.framework */; };
 		49965ED615E954F1008B516D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49965ED415E954F1008B516D /* InfoPlist.strings */; };
-		49965ED915E954F1008B516D /* StopsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965ED815E954F1008B516D /* StopsTests.m */; };
+		49965ED915E954F1008B516D /* NextArrivalSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965ED815E954F1008B516D /* NextArrivalSpec.m */; };
 		49965EF715E95B94008B516D /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EEE15E956A0008B516D /* libKiwi.a */; };
+		49965EFB15E95C4D008B516D /* NextArrivalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFA15E95C4D008B516D /* NextArrivalViewController.m */; };
+		49965EFC15E95C4D008B516D /* NextArrivalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFA15E95C4D008B516D /* NextArrivalViewController.m */; };
+		49965F0015E96069008B516D /* DirectionsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFF15E96069008B516D /* DirectionsFetcher.m */; };
+		49965F0115E96069008B516D /* DirectionsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFF15E96069008B516D /* DirectionsFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,8 +78,12 @@
 		49965ECB15E954F1008B516D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		49965ED315E954F1008B516D /* StopsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StopsTests-Info.plist"; sourceTree = "<group>"; };
 		49965ED515E954F1008B516D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		49965ED815E954F1008B516D /* StopsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StopsTests.m; sourceTree = "<group>"; };
+		49965ED815E954F1008B516D /* NextArrivalSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextArrivalSpec.m; sourceTree = "<group>"; };
 		49965EE215E956A0008B516D /* Kiwi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kiwi.xcodeproj; path = Frameworks/Kiwi/Kiwi.xcodeproj; sourceTree = "<group>"; };
+		49965EF915E95C4D008B516D /* NextArrivalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextArrivalViewController.h; sourceTree = "<group>"; };
+		49965EFA15E95C4D008B516D /* NextArrivalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextArrivalViewController.m; sourceTree = "<group>"; };
+		49965EFE15E96069008B516D /* DirectionsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionsFetcher.h; sourceTree = "<group>"; };
+		49965EFF15E96069008B516D /* DirectionsFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionsFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +147,8 @@
 			children = (
 				49965EC215E954F1008B516D /* AppDelegate.h */,
 				49965EC315E954F1008B516D /* AppDelegate.m */,
+				49965EFD15E96057008B516D /* Fetchers */,
+				49965EF815E95C33008B516D /* ViewControllers */,
 				49965EBA15E954F1008B516D /* Supporting Files */,
 			);
 			path = Stops;
@@ -158,7 +168,7 @@
 		49965ED115E954F1008B516D /* StopsTests */ = {
 			isa = PBXGroup;
 			children = (
-				49965ED815E954F1008B516D /* StopsTests.m */,
+				49965ED815E954F1008B516D /* NextArrivalSpec.m */,
 				49965ED215E954F1008B516D /* Supporting Files */,
 			);
 			path = StopsTests;
@@ -182,6 +192,24 @@
 				49965EF415E956A0008B516D /* KiwiExamples.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		49965EF815E95C33008B516D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				49965EF915E95C4D008B516D /* NextArrivalViewController.h */,
+				49965EFA15E95C4D008B516D /* NextArrivalViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		49965EFD15E96057008B516D /* Fetchers */ = {
+			isa = PBXGroup;
+			children = (
+				49965EFE15E96069008B516D /* DirectionsFetcher.h */,
+				49965EFF15E96069008B516D /* DirectionsFetcher.m */,
+			);
+			name = Fetchers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +357,8 @@
 			files = (
 				49965EC015E954F1008B516D /* main.m in Sources */,
 				49965EC415E954F1008B516D /* AppDelegate.m in Sources */,
+				49965EFB15E95C4D008B516D /* NextArrivalViewController.m in Sources */,
+				49965F0015E96069008B516D /* DirectionsFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +366,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49965ED915E954F1008B516D /* StopsTests.m in Sources */,
+				49965ED915E954F1008B516D /* NextArrivalSpec.m in Sources */,
+				49965EFC15E95C4D008B516D /* NextArrivalViewController.m in Sources */,
+				49965F0115E96069008B516D /* DirectionsFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

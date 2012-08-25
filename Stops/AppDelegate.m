@@ -1,19 +1,16 @@
-//
-//  AppDelegate.m
-//  Stops
-//
-//  Created by Andrew Bruce on 25/08/2012.
-//  Copyright (c) 2012 Andrew Bruce. All rights reserved.
-//
-
 #import "AppDelegate.h"
+#import "NextArrivalViewController.h"
+#import "DirectionsFetcher.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+
+    DirectionsFetcher *fetcher = [[DirectionsFetcher alloc] init];
+    self.window.rootViewController = [[NextArrivalViewController alloc] initWithFetcher:fetcher];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
