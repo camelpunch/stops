@@ -1,32 +1,13 @@
-//
-//  StopsTests.m
-//  StopsTests
-//
-//  Created by Andrew Bruce on 25/08/2012.
-//  Copyright (c) 2012 Andrew Bruce. All rights reserved.
-//
+#import "Kiwi.h"
 
-#import "StopsTests.h"
+SPEC_BEGIN(HomeSpec)
 
-@implementation StopsTests
+describe(@"Math", ^{
+    it(@"is pretty cool", ^{
+        NSUInteger a = 16;
+        NSUInteger b = 26;
+        [[theValue(a + b) should] equal:theValue(42)];
+    });
+});
 
-- (void)setUp
-{
-    [super setUp];
-    
-    // Set-up code here.
-}
-
-- (void)tearDown
-{
-    // Tear-down code here.
-    
-    [super tearDown];
-}
-
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in StopsTests");
-}
-
-@end
+SPEC_END

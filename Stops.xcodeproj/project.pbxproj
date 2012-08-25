@@ -18,6 +18,7 @@
 		49965ECE15E954F1008B516D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB515E954F1008B516D /* Foundation.framework */; };
 		49965ED615E954F1008B516D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49965ED415E954F1008B516D /* InfoPlist.strings */; };
 		49965ED915E954F1008B516D /* StopsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965ED815E954F1008B516D /* StopsTests.m */; };
+		49965EF715E95B94008B516D /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EEE15E956A0008B516D /* libKiwi.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = 49965EAE15E954F1008B516D;
 			remoteInfo = Stops;
+		};
+		49965EED15E956A0008B516D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49965EE215E956A0008B516D /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F5015B9F11583A77002E9A98;
+			remoteInfo = Kiwi;
+		};
+		49965EEF15E956A0008B516D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49965EE215E956A0008B516D /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 832C83C7157263B300F160D5;
+			remoteInfo = "Kiwi-OSX";
+		};
+		49965EF115E956A0008B516D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49965EE215E956A0008B516D /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F5015C9E11584017002E9A98;
+			remoteInfo = KiwiTests;
+		};
+		49965EF315E956A0008B516D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49965EE215E956A0008B516D /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A3B16542139967B800E9CC6E;
+			remoteInfo = KiwiExamples;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -45,8 +74,8 @@
 		49965ECB15E954F1008B516D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		49965ED315E954F1008B516D /* StopsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StopsTests-Info.plist"; sourceTree = "<group>"; };
 		49965ED515E954F1008B516D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		49965ED715E954F1008B516D /* StopsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StopsTests.h; sourceTree = "<group>"; };
 		49965ED815E954F1008B516D /* StopsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StopsTests.m; sourceTree = "<group>"; };
+		49965EE215E956A0008B516D /* Kiwi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kiwi.xcodeproj; path = Frameworks/Kiwi/Kiwi.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49965EF715E95B94008B516D /* libKiwi.a in Frameworks */,
 				49965ECC15E954F1008B516D /* SenTestingKit.framework in Frameworks */,
 				49965ECD15E954F1008B516D /* UIKit.framework in Frameworks */,
 				49965ECE15E954F1008B516D /* Foundation.framework in Frameworks */,
@@ -95,6 +125,7 @@
 		49965EB215E954F1008B516D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49965EE215E956A0008B516D /* Kiwi.xcodeproj */,
 				49965EB315E954F1008B516D /* UIKit.framework */,
 				49965EB515E954F1008B516D /* Foundation.framework */,
 				49965EB715E954F1008B516D /* CoreGraphics.framework */,
@@ -127,7 +158,6 @@
 		49965ED115E954F1008B516D /* StopsTests */ = {
 			isa = PBXGroup;
 			children = (
-				49965ED715E954F1008B516D /* StopsTests.h */,
 				49965ED815E954F1008B516D /* StopsTests.m */,
 				49965ED215E954F1008B516D /* Supporting Files */,
 			);
@@ -141,6 +171,17 @@
 				49965ED415E954F1008B516D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49965EE315E956A0008B516D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49965EEE15E956A0008B516D /* libKiwi.a */,
+				49965EF015E956A0008B516D /* libKiwi-OSX.a */,
+				49965EF215E956A0008B516D /* KiwiTests.octest */,
+				49965EF415E956A0008B516D /* KiwiExamples.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +242,12 @@
 			mainGroup = 49965EA415E954F1008B516D;
 			productRefGroup = 49965EB015E954F1008B516D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 49965EE315E956A0008B516D /* Products */;
+					ProjectRef = 49965EE215E956A0008B516D /* Kiwi.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				49965EAE15E954F1008B516D /* Stops */,
@@ -208,6 +255,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		49965EEE15E956A0008B516D /* libKiwi.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libKiwi.a;
+			remoteRef = 49965EED15E956A0008B516D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		49965EF015E956A0008B516D /* libKiwi-OSX.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libKiwi-OSX.a";
+			remoteRef = 49965EEF15E956A0008B516D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		49965EF215E956A0008B516D /* KiwiTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = KiwiTests.octest;
+			remoteRef = 49965EF115E956A0008B516D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		49965EF415E956A0008B516D /* KiwiExamples.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = KiwiExamples.octest;
+			remoteRef = 49965EF315E956A0008B516D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		49965EAD15E954F1008B516D /* Resources */ = {
@@ -350,6 +428,7 @@
 				GCC_PREFIX_HEADER = "Stops/Stops-Prefix.pch";
 				INFOPLIST_FILE = "Stops/Stops-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -361,6 +440,7 @@
 				GCC_PREFIX_HEADER = "Stops/Stops-Prefix.pch";
 				INFOPLIST_FILE = "Stops/Stops-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -376,8 +456,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stops/Stops-Prefix.pch";
 				INFOPLIST_FILE = "StopsTests/StopsTests-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/Frameworks/Kiwi/Kiwi";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -393,8 +475,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stops/Stops-Prefix.pch";
 				INFOPLIST_FILE = "StopsTests/StopsTests-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/Frameworks/Kiwi/Kiwi";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
