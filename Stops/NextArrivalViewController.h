@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 
 @class DirectionsFetcher;
+@class Direction;
 
 @interface NextArrivalViewController : UIViewController<UITextFieldDelegate>
 
@@ -10,5 +11,6 @@
 
 - (id)initWithFetcher:(DirectionsFetcher *)fetcher;
 - (void)findButtonClicked;
+- (void)addDirection:(Direction *)direction;
 
 @end

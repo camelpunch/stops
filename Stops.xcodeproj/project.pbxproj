@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493809E015E995D600CAD3F1 /* StopsActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493809DF15E995D600CAD3F1 /* StopsActivityIndicatorView.m */; };
+		493809E115E995D600CAD3F1 /* StopsActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493809DF15E995D600CAD3F1 /* StopsActivityIndicatorView.m */; };
+		493809E215E995D600CAD3F1 /* StopsActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493809DF15E995D600CAD3F1 /* StopsActivityIndicatorView.m */; };
 		49965EB415E954F1008B516D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB315E954F1008B516D /* UIKit.framework */; };
 		49965EB615E954F1008B516D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB515E954F1008B516D /* Foundation.framework */; };
 		49965EB815E954F1008B516D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB715E954F1008B516D /* CoreGraphics.framework */; };
@@ -35,6 +38,15 @@
 		49965F2115E9673F008B516D /* STestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965F2015E9673F008B516D /* STestController.m */; };
 		49965F2415E9678F008B516D /* KIFTestScenario+SAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965F2315E9678F008B516D /* KIFTestScenario+SAdditions.m */; };
 		49965F2715E9686F008B516D /* KIFTestStep+SAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965F2615E9686F008B516D /* KIFTestStep+SAdditions.m */; };
+		499CEFF715E99D29000AECBF /* Direction.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEFF615E99D29000AECBF /* Direction.m */; };
+		499CEFF815E99D29000AECBF /* Direction.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEFF615E99D29000AECBF /* Direction.m */; };
+		499CEFF915E99D29000AECBF /* Direction.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEFF615E99D29000AECBF /* Direction.m */; };
+		49A1718415E9979F008ED4C9 /* RouteField.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A1718315E9979F008ED4C9 /* RouteField.m */; };
+		49A1718515E9979F008ED4C9 /* RouteField.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A1718315E9979F008ED4C9 /* RouteField.m */; };
+		49A1718615E9979F008ED4C9 /* RouteField.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A1718315E9979F008ED4C9 /* RouteField.m */; };
+		49A1718915E99872008ED4C9 /* MainSubmitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A1718815E99872008ED4C9 /* MainSubmitButton.m */; };
+		49A1718A15E99872008ED4C9 /* MainSubmitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A1718815E99872008ED4C9 /* MainSubmitButton.m */; };
+		49A1718B15E99872008ED4C9 /* MainSubmitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A1718815E99872008ED4C9 /* MainSubmitButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +95,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		493809DE15E995D600CAD3F1 /* StopsActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopsActivityIndicatorView.h; sourceTree = "<group>"; };
+		493809DF15E995D600CAD3F1 /* StopsActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopsActivityIndicatorView.m; sourceTree = "<group>"; };
 		49965EAF15E954F1008B516D /* Stops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49965EB315E954F1008B516D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49965EB515E954F1008B516D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -112,6 +126,12 @@
 		49965F2315E9678F008B516D /* KIFTestScenario+SAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "KIFTestScenario+SAdditions.m"; path = "StopsEndEndTests/KIFTestScenario+SAdditions.m"; sourceTree = "<group>"; };
 		49965F2515E9686F008B516D /* KIFTestStep+SAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KIFTestStep+SAdditions.h"; path = "StopsEndEndTests/KIFTestStep+SAdditions.h"; sourceTree = "<group>"; };
 		49965F2615E9686F008B516D /* KIFTestStep+SAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "KIFTestStep+SAdditions.m"; path = "StopsEndEndTests/KIFTestStep+SAdditions.m"; sourceTree = "<group>"; };
+		499CEFF515E99D29000AECBF /* Direction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Direction.h; sourceTree = "<group>"; };
+		499CEFF615E99D29000AECBF /* Direction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Direction.m; sourceTree = "<group>"; };
+		49A1718215E9979F008ED4C9 /* RouteField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteField.h; sourceTree = "<group>"; };
+		49A1718315E9979F008ED4C9 /* RouteField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteField.m; sourceTree = "<group>"; };
+		49A1718715E99872008ED4C9 /* MainSubmitButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSubmitButton.h; sourceTree = "<group>"; };
+		49A1718815E99872008ED4C9 /* MainSubmitButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSubmitButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +170,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		493809DD15E995BA00CAD3F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				493809DE15E995D600CAD3F1 /* StopsActivityIndicatorView.h */,
+				493809DF15E995D600CAD3F1 /* StopsActivityIndicatorView.m */,
+				49A1718215E9979F008ED4C9 /* RouteField.h */,
+				49A1718315E9979F008ED4C9 /* RouteField.m */,
+				49A1718715E99872008ED4C9 /* MainSubmitButton.h */,
+				49A1718815E99872008ED4C9 /* MainSubmitButton.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		49965EA415E954F1008B516D = {
 			isa = PBXGroup;
 			children = (
@@ -190,8 +223,10 @@
 			children = (
 				49965EC215E954F1008B516D /* AppDelegate.h */,
 				49965EC315E954F1008B516D /* AppDelegate.m */,
+				499CEFF415E99D0B000AECBF /* Values */,
 				49965EFD15E96057008B516D /* Fetchers */,
 				49965EF815E95C33008B516D /* ViewControllers */,
+				493809DD15E995BA00CAD3F1 /* Views */,
 				49965EBA15E954F1008B516D /* Supporting Files */,
 			);
 			path = Stops;
@@ -274,6 +309,15 @@
 				49965F2615E9686F008B516D /* KIFTestStep+SAdditions.m */,
 			);
 			name = StopsEndEndTests;
+			sourceTree = "<group>";
+		};
+		499CEFF415E99D0B000AECBF /* Values */ = {
+			isa = PBXGroup;
+			children = (
+				499CEFF515E99D29000AECBF /* Direction.h */,
+				499CEFF615E99D29000AECBF /* Direction.m */,
+			);
+			name = Values;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,6 +504,10 @@
 				49965EC415E954F1008B516D /* AppDelegate.m in Sources */,
 				49965EFB15E95C4D008B516D /* NextArrivalViewController.m in Sources */,
 				49965F0015E96069008B516D /* DirectionsFetcher.m in Sources */,
+				493809E015E995D600CAD3F1 /* StopsActivityIndicatorView.m in Sources */,
+				49A1718415E9979F008ED4C9 /* RouteField.m in Sources */,
+				49A1718915E99872008ED4C9 /* MainSubmitButton.m in Sources */,
+				499CEFF715E99D29000AECBF /* Direction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +518,10 @@
 				49965ED915E954F1008B516D /* NextArrivalSpec.m in Sources */,
 				49965EFC15E95C4D008B516D /* NextArrivalViewController.m in Sources */,
 				49965F0115E96069008B516D /* DirectionsFetcher.m in Sources */,
+				493809E115E995D600CAD3F1 /* StopsActivityIndicatorView.m in Sources */,
+				49A1718515E9979F008ED4C9 /* RouteField.m in Sources */,
+				49A1718A15E99872008ED4C9 /* MainSubmitButton.m in Sources */,
+				499CEFF815E99D29000AECBF /* Direction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +536,10 @@
 				49965F2115E9673F008B516D /* STestController.m in Sources */,
 				49965F2415E9678F008B516D /* KIFTestScenario+SAdditions.m in Sources */,
 				49965F2715E9686F008B516D /* KIFTestStep+SAdditions.m in Sources */,
+				493809E215E995D600CAD3F1 /* StopsActivityIndicatorView.m in Sources */,
+				49A1718615E9979F008ED4C9 /* RouteField.m in Sources */,
+				49A1718B15E99872008ED4C9 /* MainSubmitButton.m in Sources */,
+				499CEFF915E99D29000AECBF /* Direction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
