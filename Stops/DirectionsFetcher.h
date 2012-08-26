@@ -1,7 +1,12 @@
 #import <Foundation/Foundation.h>
+#import "HTTPRequester.h"
 
-@interface DirectionsFetcher : NSObject
+@protocol DirectionRecipient;
+@class HTTP;
 
-- (void)fetchDirectionsForRoute:(NSString *)route;
+@interface DirectionsFetcher : NSObject<NSXMLParserDelegate>
+
+@property (weak, nonatomic) id<DirectionRecipient> delegate;
+- (void)fetchDirectionsForRouteName:(NSString *)route;
 
 @end

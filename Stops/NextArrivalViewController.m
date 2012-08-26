@@ -5,6 +5,11 @@
 #import "RouteField.h"
 #import "MainSubmitButton.h"
 
+#define FIRST_DIRECTION_BUTTON_Y_OFFSET (200.0f)
+#define DIRECTION_BUTTON_X_OFFSET (0.0f)
+#define DIRECTION_BUTTON_HEIGHT (50.0f)
+#define DIRECTION_BUTTON_WIDTH (330.0f)
+
 @interface NextArrivalViewController ()
 
 @end
@@ -12,6 +17,7 @@
 @implementation NextArrivalViewController
 {
     DirectionsFetcher *_fetcher;
+    int _directionsCount;
 }
 @synthesize findButton;
 @synthesize routeField;
@@ -22,6 +28,7 @@
     self = [super init];
     if (self) {
         _fetcher = fetcher;
+        _directionsCount = 0;
     }
     return self;
 
@@ -71,15 +78,29 @@
 {
     [self.view endEditing:NO];
     [self.spinner startAnimating];
-    [_fetcher fetchDirectionsForRoute:self.routeField.text];
+    [_fetcher fetchDirectionsForRouteName:self.routeField.text];
 }
 
 - (void)addDirection:(Direction *)direction
 {
-    UIButton *newView = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [newView setFrame:CGRectMake(0, 0, 100, 100)];
-    [newView setTitle:direction.name forState:UIControlStateNormal];
-    [self.view addSubview:newView];
+    _directionsCount++;
+    
+    UIButton *newButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [newButton setFrame:CGRectMake(DIRECTION_BUTTON_X_OFFSET,
+                                   self.currentButtonYOffset,
+                                   DIRECTION_BUTTON_WIDTH,
+                                   DIRECTION_BUTTON_HEIGHT)];
+    [newButton setTitle:direction.name forState:UIControlStateNormal];
+    [self.view addSubview:newButton];
+}
+
+#pragma mark private
+
+- (CGFloat)currentButtonYOffset
+{
+    return FIRST_DIRECTION_BUTTON_Y_OFFSET +
+    (DIRECTION_BUTTON_HEIGHT * _directionsCount) +
+    (_directionsCount > 1 ? 1 : 0);
 }
 
 @end

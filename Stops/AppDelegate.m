@@ -13,7 +13,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     DirectionsFetcher *fetcher = [[DirectionsFetcher alloc] init];
-    self.window.rootViewController = [[NextArrivalViewController alloc] initWithFetcher:fetcher];
+    NextArrivalViewController *nextArrivalViewController = [[NextArrivalViewController alloc] initWithFetcher:fetcher];
+    fetcher.delegate = nextArrivalViewController;
+    self.window.rootViewController = nextArrivalViewController;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

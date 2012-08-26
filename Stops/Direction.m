@@ -19,4 +19,14 @@
     return _name;
 }
 
+- (BOOL)isEqual:(Direction *)other
+{
+    return [_name isEqual:other.name];
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"Direction: %@", _name];
+}
+
 @end

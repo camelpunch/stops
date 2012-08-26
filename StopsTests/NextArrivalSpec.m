@@ -20,7 +20,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             
             controller.routeField.text = @"22";
             
-            [[fetcher should] receive:@selector(fetchDirectionsForRoute:)
+            [[fetcher should] receive:@selector(fetchDirectionsForRouteName:)
                         withArguments:@"22"];
             [controller findButtonClicked];
         });
@@ -29,7 +29,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             [controller view];
             
             controller.routeField.text = @"22";
-            [fetcher stub:@selector(fetchDirectionsForRoute:)];
+            [fetcher stub:@selector(fetchDirectionsForRouteName:)];
             
             [[theValue(controller.spinner.isAnimating) should] beFalse];
             [controller findButtonClicked];
@@ -38,18 +38,31 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
     });
     
     describe(@"receiving a direction", ^{
-        it(@"displays the direction as a button", ^{
+        __block Direction *inbound;
+        __block Direction *outbound;
+        __block NSUInteger initialSubviewsCount;
+        __block UIButton *firstButton;
+        __block UIButton *secondButton;
+        
+        beforeEach(^{
+            inbound = [[Direction alloc] initWithName:@"Inbound to Hell"];
+            outbound = [[Direction alloc] initWithName:@"Outbound to Heaven"];
             [controller view];
-            Direction *outboundToPotrero = [[Direction alloc] initWithName:@"Outbound to Potrero Hill"];
-            
-            NSUInteger subviewsCount = controller.view.subviews.count;
-            
-            [controller addDirection:outboundToPotrero];
-            [[[controller.view should] have:subviewsCount + 1] subviews];
-            
-            [[[controller.view.subviews lastObject] should] beKindOfClass:[UIButton class]];
-            UIButton *newButton = [controller.view.subviews lastObject];
-            [[newButton.titleLabel.text should] equal:@"Outbound to Potrero Hill"];
+            initialSubviewsCount = controller.view.subviews.count;
+            [controller addDirection:outbound];
+            [[[controller.view should] have:initialSubviewsCount + 1] subviews];
+            firstButton = [controller.view.subviews lastObject];
+        });
+        
+        it(@"displays the first direction as a button with appropriate text", ^{
+            [[firstButton.titleLabel.text should] equal:@"Outbound to Heaven"];
+        });
+    
+        it(@"displays subsequent direction buttons beneath the previous button", ^{
+            [controller addDirection:inbound];
+            secondButton = [controller.view.subviews lastObject];
+            [[theValue(secondButton.frame.origin.y) should]
+             beGreaterThan:theValue(firstButton.frame.origin.y + firstButton.frame.size.height)];
         });
     });
 });
