@@ -2,31 +2,31 @@
 
 @implementation Direction
 {
-    NSString *_name;
+    NSString *theName;
 }
 
 - (id)initWithName:(NSString *)name
 {
     self = [super init];
     if (self) {
-        _name = name;
+        theName = name;
     }
     return self;
 }
 
 - (NSString *)name
 {
-    return _name;
+    return theName;
 }
 
 - (BOOL)isEqual:(Direction *)other
 {
-    return [_name isEqual:other.name];
+    return [theName isEqual:other.name];
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"Direction: %@", _name];
+    return [NSString stringWithFormat:@"Direction: %@", theName];
 }
 
 @end

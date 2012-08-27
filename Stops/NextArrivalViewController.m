@@ -10,13 +10,13 @@
 
 @implementation NextArrivalViewController
 {
-    DirectionsFetcher *_fetcher;
-    NSMutableArray *_directionButtons;
-    CGFloat _buttonWidth;
-    CGFloat _buttonHeight;
-    CGFloat _buttonStartX;
-    CGFloat _buttonStartY;
-    CGFloat _buttonYPadding;
+    DirectionsFetcher *theFetcher;
+    NSMutableArray *theDirectionButtons;
+    CGFloat theButtonWidth;
+    CGFloat theButtonHeight;
+    CGFloat theButtonStartX;
+    CGFloat theButtonStartY;
+    CGFloat theButtonYPadding;
 }
 @synthesize findButton;
 @synthesize routeField;
@@ -28,13 +28,13 @@ directionButtonYPadding:(CGFloat)directionButtonYPadding
 {
     self = [super init];
     if (self) {
-        _fetcher = fetcher;
-        _directionButtons = [[NSMutableArray alloc] init];
-        _buttonStartX = CGRectGetMinX(directionButtonDimensions);
-        _buttonStartY = CGRectGetMinY(directionButtonDimensions);
-        _buttonWidth = CGRectGetWidth(directionButtonDimensions);
-        _buttonHeight = CGRectGetHeight(directionButtonDimensions);
-        _buttonYPadding = directionButtonYPadding;
+        theFetcher = fetcher;
+        theDirectionButtons = [[NSMutableArray alloc] init];
+        theButtonStartX = CGRectGetMinX(directionButtonDimensions);
+        theButtonStartY = CGRectGetMinY(directionButtonDimensions);
+        theButtonWidth = CGRectGetWidth(directionButtonDimensions);
+        theButtonHeight = CGRectGetHeight(directionButtonDimensions);
+        theButtonYPadding = directionButtonYPadding;
     }
     return self;
 }
@@ -53,7 +53,7 @@ directionButtonYPadding:(CGFloat)directionButtonYPadding
     [self.view endEditing:NO];
     [self.spinner startAnimating];
     [self removeDirectionButtons];
-    [_fetcher fetchDirectionsForRouteName:self.routeField.text];
+    [theFetcher fetchDirectionsForRouteName:self.routeField.text];
 }
 
 - (void)addDirection:(Direction *)direction
@@ -66,20 +66,20 @@ directionButtonYPadding:(CGFloat)directionButtonYPadding
 
 - (void)removeDirectionButtons
 {
-    for (UIButton *button in _directionButtons) {
+    for (UIButton *button in theDirectionButtons) {
         [button removeFromSuperview];
     }
-    [_directionButtons removeAllObjects];
+    [theDirectionButtons removeAllObjects];
 }
 
 - (void)createDirectionButtonWithDirection:(Direction *)direction
 {
     UIButton *newButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [_directionButtons addObject:newButton];
-    [newButton setFrame:CGRectMake(_buttonStartX,
+    [theDirectionButtons addObject:newButton];
+    [newButton setFrame:CGRectMake(theButtonStartX,
                                    self.currentButtonYOffset,
-                                   _buttonWidth,
-                                   _buttonHeight)];
+                                   theButtonWidth,
+                                   theButtonHeight)];
     [newButton setTitle:direction.name forState:UIControlStateNormal];
     [self.view addSubview:newButton];
 }
@@ -109,10 +109,10 @@ directionButtonYPadding:(CGFloat)directionButtonYPadding
 
 - (CGFloat)currentButtonYOffset
 {
-    if (_directionButtons.count == 1) {
-        return _buttonStartY;
+    if (theDirectionButtons.count == 1) {
+        return theButtonStartY;
     }
-    return _buttonStartY + (_buttonHeight * (_directionButtons.count - 1)) + _buttonYPadding;
+    return theButtonStartY + (theButtonHeight * (theDirectionButtons.count - 1)) + theButtonYPadding;
 }
 
 @end

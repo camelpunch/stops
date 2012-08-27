@@ -2,36 +2,36 @@
 
 @implementation FakeDirectionRecipient
 {
-    NSMutableSet *_expectedAndReceivedDirections;
-    NSMutableSet *_expectedDirections;
+    NSMutableSet *theExpectedAndReceivedDirections;
+    NSMutableSet *theExpectedDirections;
 }
 - (id)init
 {
     self = [super init];
     if (self) {
-        _expectedAndReceivedDirections = [[NSMutableSet alloc] init];
-        _expectedDirections = [[NSMutableSet alloc] init];
+        theExpectedAndReceivedDirections = [[NSMutableSet alloc] init];
+        theExpectedDirections = [[NSMutableSet alloc] init];
     }
     return self;
 }
 
 - (void)addDirection:(Direction *)direction
 {
-    for (Direction *expectedDirection in _expectedDirections) {
+    for (Direction *expectedDirection in theExpectedDirections) {
         if ([expectedDirection isEqual:direction]) {
-            [_expectedAndReceivedDirections addObject:expectedDirection];
+            [theExpectedAndReceivedDirections addObject:expectedDirection];
         }
     }
 }
 
 - (void)expectDirection:(Direction *)direction
 {
-    [_expectedDirections addObject:direction];
+    [theExpectedDirections addObject:direction];
 }
 
 - (NSSet *)receivedDirections
 {
-    return [NSSet setWithSet:_expectedAndReceivedDirections];
+    return [NSSet setWithSet:theExpectedAndReceivedDirections];
 }
 
 @end

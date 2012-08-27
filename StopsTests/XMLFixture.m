@@ -2,21 +2,21 @@
 
 @implementation XMLFixture
 {
-    NSString *_name;
+    NSString *theName;
 }
 
 - initWithName:(NSString *)name
 {
     self = [super init];
     if (self) {
-        _name = name;
+        theName = name;
     }
     return self;
 }
 
 - (NSString *)body
 {
-    NSString *path = [[NSBundle bundleWithIdentifier:@"Andrew-Bruce.StopsTests"] pathForResource:_name
+    NSString *path = [[NSBundle bundleWithIdentifier:@"Andrew-Bruce.StopsTests"] pathForResource:theName
                                                                                           ofType:@""];
     NSError *error = nil;
     return [[NSString alloc] initWithContentsOfFile:path

@@ -3,7 +3,7 @@
 #import "Direction.h"
 
 @implementation DirectionsFetcher
-@synthesize delegate = _delegate;
+@synthesize delegate;
 
 - (void)fetchDirectionsForRouteName:(NSString *)route
 {
