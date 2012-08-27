@@ -52,21 +52,30 @@ directionButtonYPadding:(CGFloat)directionButtonYPadding
 {
     [self.view endEditing:NO];
     [self.spinner startAnimating];
-    for (UIButton *button in _directionButtons) {
-        [button removeFromSuperview];
-    }
-    [_directionButtons removeAllObjects];
+    [self removeDirectionButtons];
     [_fetcher fetchDirectionsForRouteName:self.routeField.text];
 }
 
 - (void)addDirection:(Direction *)direction
 {
     [self.spinner stopAnimating];
-    
+    [self createDirectionButtonWithDirection:direction];
+}
+
+#pragma mark private
+
+- (void)removeDirectionButtons
+{
+    for (UIButton *button in _directionButtons) {
+        [button removeFromSuperview];
+    }
+    [_directionButtons removeAllObjects];
+}
+
+- (void)createDirectionButtonWithDirection:(Direction *)direction
+{
     UIButton *newButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-
     [_directionButtons addObject:newButton];
-
     [newButton setFrame:CGRectMake(_buttonStartX,
                                    self.currentButtonYOffset,
                                    _buttonWidth,
@@ -74,8 +83,6 @@ directionButtonYPadding:(CGFloat)directionButtonYPadding
     [newButton setTitle:direction.name forState:UIControlStateNormal];
     [self.view addSubview:newButton];
 }
-
-#pragma mark private
 
 - (void)createSpinner
 {
