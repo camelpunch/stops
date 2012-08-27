@@ -1,8 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "HTTPRequester.h"
 
 @protocol DirectionRecipient;
-@class HTTP;
 
 @interface DirectionsFetcher : NSObject<NSXMLParserDelegate>
 

@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4905766415EA016700546464 /* HTTPSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4905766315EA016700546464 /* HTTPSpec.m */; };
 		4927E6DA15E9B33500AADD70 /* DirectionsFetcherSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4927E6D915E9B33500AADD70 /* DirectionsFetcherSpec.m */; };
-		4927E6DE15E9B43F00AADD70 /* HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 4927E6DD15E9B43F00AADD70 /* HTTP.m */; };
-		4927E6E015E9B43F00AADD70 /* HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 4927E6DD15E9B43F00AADD70 /* HTTP.m */; };
 		493809E015E995D600CAD3F1 /* StopsActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493809DF15E995D600CAD3F1 /* StopsActivityIndicatorView.m */; };
 		493809E215E995D600CAD3F1 /* StopsActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493809DF15E995D600CAD3F1 /* StopsActivityIndicatorView.m */; };
 		493CC8E915E9C31A0056A257 /* DirectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 493CC8E815E9C31A0056A257 /* DirectionSpec.m */; };
@@ -97,12 +94,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4905766315EA016700546464 /* HTTPSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPSpec.m; sourceTree = "<group>"; };
 		4927E6D915E9B33500AADD70 /* DirectionsFetcherSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionsFetcherSpec.m; sourceTree = "<group>"; };
-		4927E6DC15E9B43F00AADD70 /* HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTP.h; sourceTree = "<group>"; };
-		4927E6DD15E9B43F00AADD70 /* HTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTP.m; sourceTree = "<group>"; };
 		4927E6E215E9B88000AADD70 /* DirectionRecipient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionRecipient.h; sourceTree = "<group>"; };
-		4927E6E315E9BCA200AADD70 /* HTTPRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequester.h; sourceTree = "<group>"; };
 		493809DE15E995D600CAD3F1 /* StopsActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopsActivityIndicatorView.h; sourceTree = "<group>"; };
 		493809DF15E995D600CAD3F1 /* StopsActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopsActivityIndicatorView.m; sourceTree = "<group>"; };
 		493CC8E815E9C31A0056A257 /* DirectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionSpec.m; sourceTree = "<group>"; };
@@ -263,7 +256,6 @@
 				49965ED815E954F1008B516D /* NextArrivalSpec.m */,
 				4927E6D915E9B33500AADD70 /* DirectionsFetcherSpec.m */,
 				493CC8E815E9C31A0056A257 /* DirectionSpec.m */,
-				4905766315EA016700546464 /* HTTPSpec.m */,
 				49EB73C615EAD0D900A3F520 /* XMLFixture.h */,
 				49EB73C715EAD0D900A3F520 /* XMLFixture.m */,
 				497B641415EAEC820050CC2A /* FakeDirectionRecipient.h */,
@@ -309,9 +301,6 @@
 				49965EFE15E96069008B516D /* DirectionsFetcher.h */,
 				49965EFF15E96069008B516D /* DirectionsFetcher.m */,
 				4927E6E215E9B88000AADD70 /* DirectionRecipient.h */,
-				4927E6DC15E9B43F00AADD70 /* HTTP.h */,
-				4927E6DD15E9B43F00AADD70 /* HTTP.m */,
-				4927E6E315E9BCA200AADD70 /* HTTPRequester.h */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -543,7 +532,6 @@
 				49A1718415E9979F008ED4C9 /* RouteField.m in Sources */,
 				49A1718915E99872008ED4C9 /* MainSubmitButton.m in Sources */,
 				499CEFF715E99D29000AECBF /* Direction.m in Sources */,
-				4927E6DE15E9B43F00AADD70 /* HTTP.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,7 +542,6 @@
 				49965ED915E954F1008B516D /* NextArrivalSpec.m in Sources */,
 				4927E6DA15E9B33500AADD70 /* DirectionsFetcherSpec.m in Sources */,
 				493CC8E915E9C31A0056A257 /* DirectionSpec.m in Sources */,
-				4905766415EA016700546464 /* HTTPSpec.m in Sources */,
 				49EB73C815EAD0D900A3F520 /* XMLFixture.m in Sources */,
 				497B641615EAEC820050CC2A /* FakeDirectionRecipient.m in Sources */,
 			);
@@ -575,7 +562,6 @@
 				49A1718615E9979F008ED4C9 /* RouteField.m in Sources */,
 				49A1718B15E99872008ED4C9 /* MainSubmitButton.m in Sources */,
 				499CEFF915E99D29000AECBF /* Direction.m in Sources */,
-				4927E6E015E9B43F00AADD70 /* HTTP.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
