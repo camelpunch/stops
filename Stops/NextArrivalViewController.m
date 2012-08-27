@@ -39,44 +39,13 @@ directionButtonYPadding:(CGFloat)directionButtonYPadding
     return self;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.spinner = [[StopsActivityIndicatorView alloc] init];
-    self.spinner.center = self.view.center;
-    [self.view addSubview:self.spinner];
-    
-    self.routeField = [[RouteField alloc] init];
-    self.routeField.delegate = self;
-    [self.view addSubview:self.routeField];
-
-    self.findButton = [[MainSubmitButton alloc] init];
-    [self.findButton addTarget:self
-                        action:@selector(findButtonClicked)
-              forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:self.findButton];    
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    [self createSpinner];
+    [self createRouteField];
+    [self.routeField becomeFirstResponder];
+    [self createFindButton];
 }
 
 - (void)findButtonClicked
@@ -86,7 +55,7 @@ directionButtonYPadding:(CGFloat)directionButtonYPadding
     for (UIButton *button in _directionButtons) {
         [button removeFromSuperview];
     }
-    _directionButtons = [[NSMutableArray alloc] init];
+    [_directionButtons removeAllObjects];
     [_fetcher fetchDirectionsForRouteName:self.routeField.text];
 }
 
@@ -107,6 +76,29 @@ directionButtonYPadding:(CGFloat)directionButtonYPadding
 }
 
 #pragma mark private
+
+- (void)createSpinner
+{
+    self.spinner = [[StopsActivityIndicatorView alloc] init];
+    self.spinner.center = self.view.center;
+    [self.view addSubview:self.spinner];
+}
+
+- (void)createRouteField
+{
+    self.routeField = [[RouteField alloc] init];
+    self.routeField.delegate = self;
+    [self.view addSubview:self.routeField];
+}
+
+- (void)createFindButton
+{
+    self.findButton = [[MainSubmitButton alloc] init];
+    [self.findButton addTarget:self
+                        action:@selector(findButtonClicked)
+              forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.findButton];
+}
 
 - (CGFloat)currentButtonYOffset
 {
