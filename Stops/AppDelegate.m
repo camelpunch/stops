@@ -13,7 +13,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     DirectionsFetcher *fetcher = [[DirectionsFetcher alloc] init];
-    NextArrivalViewController *nextArrivalViewController = [[NextArrivalViewController alloc] initWithFetcher:fetcher];
+    NextArrivalViewController *nextArrivalViewController =
+    [[NextArrivalViewController alloc] initWithFetcher:fetcher
+                             directionButtonDimensions:CGRectMake(0, 240, 330, 50)];
     fetcher.delegate = nextArrivalViewController;
     self.window.rootViewController = nextArrivalViewController;
     

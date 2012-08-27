@@ -5,33 +5,29 @@
 #import "RouteField.h"
 #import "MainSubmitButton.h"
 
-#define FIRST_DIRECTION_BUTTON_Y_OFFSET (200.0f)
-#define DIRECTION_BUTTON_X_OFFSET (0.0f)
-#define DIRECTION_BUTTON_HEIGHT (50.0f)
-#define DIRECTION_BUTTON_WIDTH (330.0f)
-
 @interface NextArrivalViewController ()
-
 @end
 
 @implementation NextArrivalViewController
 {
     DirectionsFetcher *_fetcher;
-    int _directionsCount;
+    NSMutableArray *_directionButtons;
+    CGRect _directionButtonDimensions;
 }
 @synthesize findButton;
 @synthesize routeField;
 @synthesize spinner;
 
 - (id)initWithFetcher:(DirectionsFetcher *)fetcher
+directionButtonDimensions:(CGRect)directionButtonDimensions
 {
     self = [super init];
     if (self) {
         _fetcher = fetcher;
-        _directionsCount = 0;
+        _directionButtons = [[NSMutableArray alloc] init];
+        _directionButtonDimensions = directionButtonDimensions;
     }
     return self;
-
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -78,18 +74,25 @@
 {
     [self.view endEditing:NO];
     [self.spinner startAnimating];
+    for (UIButton *button in _directionButtons) {
+        [button removeFromSuperview];
+    }
+    _directionButtons = [[NSMutableArray alloc] init];
     [_fetcher fetchDirectionsForRouteName:self.routeField.text];
 }
 
 - (void)addDirection:(Direction *)direction
 {
-    _directionsCount++;
+    [self.spinner stopAnimating];
     
     UIButton *newButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [newButton setFrame:CGRectMake(DIRECTION_BUTTON_X_OFFSET,
+
+    [_directionButtons addObject:newButton];
+
+    [newButton setFrame:CGRectMake(_directionButtonDimensions.origin.x,
                                    self.currentButtonYOffset,
-                                   DIRECTION_BUTTON_WIDTH,
-                                   DIRECTION_BUTTON_HEIGHT)];
+                                   _directionButtonDimensions.size.width,
+                                   _directionButtonDimensions.size.height)];
     [newButton setTitle:direction.name forState:UIControlStateNormal];
     [self.view addSubview:newButton];
 }
@@ -98,9 +101,9 @@
 
 - (CGFloat)currentButtonYOffset
 {
-    return FIRST_DIRECTION_BUTTON_Y_OFFSET +
-    (DIRECTION_BUTTON_HEIGHT * _directionsCount) +
-    (_directionsCount > 1 ? 1 : 0);
+    return _directionButtonDimensions.origin.y +
+    (_directionButtonDimensions.size.height * (_directionButtons.count - 1)) +
+    (_directionButtons.count > 1 ? 1 : 0);
 }
 
 @end
