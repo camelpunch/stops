@@ -11,7 +11,7 @@
         self.placeholder = @"Enter Route #";
         self.accessibilityLabel = @"Enter Route";
         self.autocorrectionType = UITextAutocorrectionTypeNo;
-        self.keyboardType = UIKeyboardTypeNumberPad;
+        self.keyboardType = UIKeyboardTypeDefault;
         self.returnKeyType = UIReturnKeySearch;
         self.clearButtonMode = UITextFieldViewModeWhileEditing;
         self.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
