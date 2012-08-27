@@ -11,12 +11,15 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
     __block Direction *inbound;
     __block Direction *outbound;
     __block CGRect directionButtonDimensions;
+    __block CGFloat verticalPadding;
     
     beforeEach(^{
         fetcher = [DirectionsFetcher mock];
         directionButtonDimensions = CGRectMake(10, 20, 30, 40);
+        verticalPadding = 10;
         controller = [[NextArrivalViewController alloc] initWithFetcher:fetcher
-                                              directionButtonDimensions:directionButtonDimensions];
+                                              directionButtonDimensions:directionButtonDimensions
+                                                directionButtonYPadding:verticalPadding];
         inbound = [[Direction alloc] initWithName:@"Inbound to Hell"];
         outbound = [[Direction alloc] initWithName:@"Outbound to Heaven"];
     });
@@ -87,12 +90,12 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             [[firstButton.titleLabel.text should] equal:@"Outbound to Heaven"];
         });
     
-        it(@"displays subsequent direction buttons beneath the previous button", ^{
+        it(@"displays subsequent direction buttons beneath the previous button, with provided padding", ^{
             [controller addDirection:outbound];
             [controller addDirection:inbound];
             secondButton = [controller.view.subviews lastObject];
             [[theValue(secondButton.frame.origin.y) should]
-             beGreaterThan:theValue(firstButton.frame.origin.y + firstButton.frame.size.height)];
+             equal:theValue(firstButton.frame.origin.y + firstButton.frame.size.height + verticalPadding)];
         });
         
         it(@"resets the position of new buttons if find has been pressed", ^{

@@ -12,7 +12,11 @@
 {
     DirectionsFetcher *_fetcher;
     NSMutableArray *_directionButtons;
-    CGRect _directionButtonDimensions;
+    CGFloat _buttonWidth;
+    CGFloat _buttonHeight;
+    CGFloat _buttonStartX;
+    CGFloat _buttonStartY;
+    CGFloat _buttonYPadding;
 }
 @synthesize findButton;
 @synthesize routeField;
@@ -20,12 +24,17 @@
 
 - (id)initWithFetcher:(DirectionsFetcher *)fetcher
 directionButtonDimensions:(CGRect)directionButtonDimensions
+directionButtonYPadding:(CGFloat)directionButtonYPadding
 {
     self = [super init];
     if (self) {
         _fetcher = fetcher;
         _directionButtons = [[NSMutableArray alloc] init];
-        _directionButtonDimensions = directionButtonDimensions;
+        _buttonStartX = CGRectGetMinX(directionButtonDimensions);
+        _buttonStartY = CGRectGetMinY(directionButtonDimensions);
+        _buttonWidth = CGRectGetWidth(directionButtonDimensions);
+        _buttonHeight = CGRectGetHeight(directionButtonDimensions);
+        _buttonYPadding = directionButtonYPadding;
     }
     return self;
 }
@@ -89,10 +98,10 @@ directionButtonDimensions:(CGRect)directionButtonDimensions
 
     [_directionButtons addObject:newButton];
 
-    [newButton setFrame:CGRectMake(_directionButtonDimensions.origin.x,
+    [newButton setFrame:CGRectMake(_buttonStartX,
                                    self.currentButtonYOffset,
-                                   _directionButtonDimensions.size.width,
-                                   _directionButtonDimensions.size.height)];
+                                   _buttonWidth,
+                                   _buttonHeight)];
     [newButton setTitle:direction.name forState:UIControlStateNormal];
     [self.view addSubview:newButton];
 }
@@ -101,9 +110,10 @@ directionButtonDimensions:(CGRect)directionButtonDimensions
 
 - (CGFloat)currentButtonYOffset
 {
-    return _directionButtonDimensions.origin.y +
-    (_directionButtonDimensions.size.height * (_directionButtons.count - 1)) +
-    (_directionButtons.count > 1 ? 1 : 0);
+    if (_directionButtons.count == 1) {
+        return _buttonStartY;
+    }
+    return _buttonStartY + (_buttonHeight * (_directionButtons.count - 1)) + _buttonYPadding;
 }
 
 @end

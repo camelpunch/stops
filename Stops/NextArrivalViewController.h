@@ -10,7 +10,8 @@
 @property (strong, nonatomic) UIActivityIndicatorView *spinner;
 
 - (id)initWithFetcher:(DirectionsFetcher *)fetcher
-directionButtonDimensions:(CGRect)directionButtonDimensions;
+directionButtonDimensions:(CGRect)directionButtonDimensions
+directionButtonYPadding:(CGFloat)directionButtonYPadding;
 - (void)findButtonClicked;
 
 @end

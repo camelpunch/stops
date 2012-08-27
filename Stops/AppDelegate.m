@@ -15,7 +15,8 @@
     DirectionsFetcher *fetcher = [[DirectionsFetcher alloc] init];
     NextArrivalViewController *nextArrivalViewController =
     [[NextArrivalViewController alloc] initWithFetcher:fetcher
-                             directionButtonDimensions:CGRectMake(0, 240, 330, 50)];
+                             directionButtonDimensions:CGRectMake(10, 240, 300, 40)
+                               directionButtonYPadding:10];
     fetcher.delegate = nextArrivalViewController;
     self.window.rootViewController = nextArrivalViewController;
     
