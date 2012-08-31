@@ -12,6 +12,5 @@
 - (id)initWithFetcher:(DirectionsFetcher *)fetcher
 directionButtonDimensions:(CGRect)directionButtonDimensions
 directionButtonYPadding:(CGFloat)directionButtonYPadding;
-- (void)findButtonClicked;
 
 @end

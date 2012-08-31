@@ -48,14 +48,6 @@ directionButtonYPadding:(CGFloat)directionButtonYPadding
     [self createFindButton];
 }
 
-- (void)findButtonClicked
-{
-    [self.view endEditing:NO];
-    [self.spinner startAnimating];
-    [self removeDirectionButtons];
-    [theFetcher fetchDirectionsForRouteName:self.routeField.text];
-}
-
 - (void)addDirection:(Direction *)direction
 {
     [self.spinner stopAnimating];
@@ -63,6 +55,14 @@ directionButtonYPadding:(CGFloat)directionButtonYPadding
 }
 
 #pragma mark private
+
+- (void)findButtonClicked
+{
+    [self.view endEditing:NO];
+    [self.spinner startAnimating];
+    [self removeDirectionButtons];
+    [theFetcher fetchDirectionsForRouteName:self.routeField.text];
+}
 
 - (void)removeDirectionButtons
 {

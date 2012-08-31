@@ -32,7 +32,8 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             
             [[fetcher should] receive:@selector(fetchDirectionsForRouteName:)
                         withArguments:@"22"];
-            [controller findButtonClicked];
+
+            [controller.findButton sendActionsForControlEvents:UIControlEventTouchUpInside];
         });
         
         it(@"shows the loading spinner", ^{
@@ -42,7 +43,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             [fetcher stub:@selector(fetchDirectionsForRouteName:)];
             
             [[theValue(controller.spinner.isAnimating) should] beFalse];
-            [controller findButtonClicked];
+            [controller.findButton sendActionsForControlEvents:UIControlEventTouchUpInside];
             [[theValue(controller.spinner.isAnimating) should] beTrue];
         });
         
@@ -60,7 +61,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             [controller.view addSubview:anotherView];
             
             NSUInteger buttonCountBefore = controller.view.subviews.count;
-            [controller findButtonClicked];
+            [controller.findButton sendActionsForControlEvents:UIControlEventTouchUpInside];
             [[theValue(controller.view.subviews.count) should] equal:theValue(buttonCountBefore - 1)];
             [[controller.view.subviews should] contain:anotherView];
             [[controller.view.subviews shouldNot] contain:directionButton];
@@ -103,7 +104,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
 
             [controller addDirection:outbound];
             [controller addDirection:inbound];
-            [controller findButtonClicked];
+            [controller.findButton sendActionsForControlEvents:UIControlEventTouchUpInside];
             [controller addDirection:outbound];
             
             firstButton = [controller.view.subviews lastObject];
