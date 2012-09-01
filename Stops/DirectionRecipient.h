@@ -2,8 +2,9 @@
 
 @class Direction;
 
-@protocol DirectionRecipient <NSObject>
+@protocol RouteRecipient <NSObject>
 
 - (void)addDirection:(Direction *)direction;
+- (void)addStops:(NSArray *)stops;
 
 @end

@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4927E6DA15E9B33500AADD70 /* DirectionsFetcherSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4927E6D915E9B33500AADD70 /* DirectionsFetcherSpec.m */; };
+		4927E6DA15E9B33500AADD70 /* RouteFetcherSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4927E6D915E9B33500AADD70 /* RouteFetcherSpec.m */; };
 		493809E015E995D600CAD3F1 /* StopsActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493809DF15E995D600CAD3F1 /* StopsActivityIndicatorView.m */; };
 		493809E215E995D600CAD3F1 /* StopsActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493809DF15E995D600CAD3F1 /* StopsActivityIndicatorView.m */; };
 		493CC8E915E9C31A0056A257 /* DirectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 493CC8E815E9C31A0056A257 /* DirectionSpec.m */; };
-		497B641615EAEC820050CC2A /* FakeDirectionRecipient.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B641515EAEC820050CC2A /* FakeDirectionRecipient.m */; };
+		494CB60E15F1C20300152AB3 /* Stop.m in Sources */ = {isa = PBXBuildFile; fileRef = 494CB60D15F1C20300152AB3 /* Stop.m */; };
+		494CB61015F1C20300152AB3 /* Stop.m in Sources */ = {isa = PBXBuildFile; fileRef = 494CB60D15F1C20300152AB3 /* Stop.m */; };
+		494CB61415F1C79E00152AB3 /* StopSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 494CB61315F1C79E00152AB3 /* StopSpec.m */; };
+		497B641615EAEC820050CC2A /* FakeRouteRecipient.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B641515EAEC820050CC2A /* FakeRouteRecipient.m */; };
 		49965EB415E954F1008B516D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB315E954F1008B516D /* UIKit.framework */; };
 		49965EB615E954F1008B516D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB515E954F1008B516D /* Foundation.framework */; };
 		49965EB815E954F1008B516D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB715E954F1008B516D /* CoreGraphics.framework */; };
@@ -25,11 +28,11 @@
 		49965ED915E954F1008B516D /* NextArrivalSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965ED815E954F1008B516D /* NextArrivalSpec.m */; };
 		49965EF715E95B94008B516D /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EEE15E956A0008B516D /* libKiwi.a */; };
 		49965EFB15E95C4D008B516D /* NextArrivalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFA15E95C4D008B516D /* NextArrivalViewController.m */; };
-		49965F0015E96069008B516D /* DirectionsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFF15E96069008B516D /* DirectionsFetcher.m */; };
+		49965F0015E96069008B516D /* RouteFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFF15E96069008B516D /* RouteFetcher.m */; };
 		49965F0D15E9666D008B516D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EBF15E954F1008B516D /* main.m */; };
 		49965F0E15E9666D008B516D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EC315E954F1008B516D /* AppDelegate.m */; };
 		49965F0F15E9666D008B516D /* NextArrivalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFA15E95C4D008B516D /* NextArrivalViewController.m */; };
-		49965F1015E9666D008B516D /* DirectionsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFF15E96069008B516D /* DirectionsFetcher.m */; };
+		49965F1015E9666D008B516D /* RouteFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFF15E96069008B516D /* RouteFetcher.m */; };
 		49965F1215E9666D008B516D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB315E954F1008B516D /* UIKit.framework */; };
 		49965F1315E9666D008B516D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB515E954F1008B516D /* Foundation.framework */; };
 		49965F1415E9666D008B516D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB715E954F1008B516D /* CoreGraphics.framework */; };
@@ -94,13 +97,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4927E6D915E9B33500AADD70 /* DirectionsFetcherSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionsFetcherSpec.m; sourceTree = "<group>"; };
+		4927E6D915E9B33500AADD70 /* RouteFetcherSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteFetcherSpec.m; sourceTree = "<group>"; };
 		4927E6E215E9B88000AADD70 /* DirectionRecipient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionRecipient.h; sourceTree = "<group>"; };
 		493809DE15E995D600CAD3F1 /* StopsActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopsActivityIndicatorView.h; sourceTree = "<group>"; };
 		493809DF15E995D600CAD3F1 /* StopsActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopsActivityIndicatorView.m; sourceTree = "<group>"; };
 		493CC8E815E9C31A0056A257 /* DirectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionSpec.m; sourceTree = "<group>"; };
-		497B641415EAEC820050CC2A /* FakeDirectionRecipient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeDirectionRecipient.h; sourceTree = "<group>"; };
-		497B641515EAEC820050CC2A /* FakeDirectionRecipient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeDirectionRecipient.m; sourceTree = "<group>"; };
+		494CB60C15F1C20300152AB3 /* Stop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stop.h; sourceTree = "<group>"; };
+		494CB60D15F1C20300152AB3 /* Stop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stop.m; sourceTree = "<group>"; };
+		494CB61315F1C79E00152AB3 /* StopSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopSpec.m; sourceTree = "<group>"; };
+		497B641415EAEC820050CC2A /* FakeRouteRecipient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeRouteRecipient.h; sourceTree = "<group>"; };
+		497B641515EAEC820050CC2A /* FakeRouteRecipient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeRouteRecipient.m; sourceTree = "<group>"; };
 		49965EAF15E954F1008B516D /* Stops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49965EB315E954F1008B516D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49965EB515E954F1008B516D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -119,8 +125,8 @@
 		49965EE215E956A0008B516D /* Kiwi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kiwi.xcodeproj; path = Frameworks/Kiwi/Kiwi.xcodeproj; sourceTree = "<group>"; };
 		49965EF915E95C4D008B516D /* NextArrivalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextArrivalViewController.h; sourceTree = "<group>"; };
 		49965EFA15E95C4D008B516D /* NextArrivalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextArrivalViewController.m; sourceTree = "<group>"; };
-		49965EFE15E96069008B516D /* DirectionsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionsFetcher.h; sourceTree = "<group>"; };
-		49965EFF15E96069008B516D /* DirectionsFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionsFetcher.m; sourceTree = "<group>"; };
+		49965EFE15E96069008B516D /* RouteFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteFetcher.h; sourceTree = "<group>"; };
+		49965EFF15E96069008B516D /* RouteFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteFetcher.m; sourceTree = "<group>"; };
 		49965F0215E9665D008B516D /* KIF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KIF.xcodeproj; path = Frameworks/KIF/KIF.xcodeproj; sourceTree = "<group>"; };
 		49965F1A15E9666D008B516D /* StopsEndEndTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopsEndEndTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49965F1C15E9666E008B516D /* Stops copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Stops copy-Info.plist"; path = "/Users/andrew/dev/Stops/Stops copy-Info.plist"; sourceTree = "<absolute>"; };
@@ -254,12 +260,13 @@
 				49EB73C015EAC8DF00A3F520 /* Fixtures */,
 				49965ED215E954F1008B516D /* Supporting Files */,
 				49965ED815E954F1008B516D /* NextArrivalSpec.m */,
-				4927E6D915E9B33500AADD70 /* DirectionsFetcherSpec.m */,
+				4927E6D915E9B33500AADD70 /* RouteFetcherSpec.m */,
 				493CC8E815E9C31A0056A257 /* DirectionSpec.m */,
+				494CB61315F1C79E00152AB3 /* StopSpec.m */,
 				49EB73C615EAD0D900A3F520 /* XMLFixture.h */,
 				49EB73C715EAD0D900A3F520 /* XMLFixture.m */,
-				497B641415EAEC820050CC2A /* FakeDirectionRecipient.h */,
-				497B641515EAEC820050CC2A /* FakeDirectionRecipient.m */,
+				497B641415EAEC820050CC2A /* FakeRouteRecipient.h */,
+				497B641515EAEC820050CC2A /* FakeRouteRecipient.m */,
 			);
 			path = StopsTests;
 			sourceTree = "<group>";
@@ -298,8 +305,8 @@
 			children = (
 				49965EF815E95C33008B516D /* ViewControllers */,
 				493809DD15E995BA00CAD3F1 /* Views */,
-				49965EFE15E96069008B516D /* DirectionsFetcher.h */,
-				49965EFF15E96069008B516D /* DirectionsFetcher.m */,
+				49965EFE15E96069008B516D /* RouteFetcher.h */,
+				49965EFF15E96069008B516D /* RouteFetcher.m */,
 				4927E6E215E9B88000AADD70 /* DirectionRecipient.h */,
 			);
 			name = Objects;
@@ -331,6 +338,8 @@
 			children = (
 				499CEFF515E99D29000AECBF /* Direction.h */,
 				499CEFF615E99D29000AECBF /* Direction.m */,
+				494CB60C15F1C20300152AB3 /* Stop.h */,
+				494CB60D15F1C20300152AB3 /* Stop.m */,
 			);
 			name = Values;
 			sourceTree = "<group>";
@@ -527,11 +536,12 @@
 				49965EC015E954F1008B516D /* main.m in Sources */,
 				49965EC415E954F1008B516D /* AppDelegate.m in Sources */,
 				49965EFB15E95C4D008B516D /* NextArrivalViewController.m in Sources */,
-				49965F0015E96069008B516D /* DirectionsFetcher.m in Sources */,
+				49965F0015E96069008B516D /* RouteFetcher.m in Sources */,
 				493809E015E995D600CAD3F1 /* StopsActivityIndicatorView.m in Sources */,
 				49A1718415E9979F008ED4C9 /* RouteField.m in Sources */,
 				49A1718915E99872008ED4C9 /* MainSubmitButton.m in Sources */,
 				499CEFF715E99D29000AECBF /* Direction.m in Sources */,
+				494CB60E15F1C20300152AB3 /* Stop.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,10 +550,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				49965ED915E954F1008B516D /* NextArrivalSpec.m in Sources */,
-				4927E6DA15E9B33500AADD70 /* DirectionsFetcherSpec.m in Sources */,
+				4927E6DA15E9B33500AADD70 /* RouteFetcherSpec.m in Sources */,
 				493CC8E915E9C31A0056A257 /* DirectionSpec.m in Sources */,
 				49EB73C815EAD0D900A3F520 /* XMLFixture.m in Sources */,
-				497B641615EAEC820050CC2A /* FakeDirectionRecipient.m in Sources */,
+				497B641615EAEC820050CC2A /* FakeRouteRecipient.m in Sources */,
+				494CB61415F1C79E00152AB3 /* StopSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,7 +565,7 @@
 				49965F0D15E9666D008B516D /* main.m in Sources */,
 				49965F0E15E9666D008B516D /* AppDelegate.m in Sources */,
 				49965F0F15E9666D008B516D /* NextArrivalViewController.m in Sources */,
-				49965F1015E9666D008B516D /* DirectionsFetcher.m in Sources */,
+				49965F1015E9666D008B516D /* RouteFetcher.m in Sources */,
 				49965F2115E9673F008B516D /* STestController.m in Sources */,
 				49965F2415E9678F008B516D /* KIFTestScenario+SAdditions.m in Sources */,
 				49965F2715E9686F008B516D /* KIFTestStep+SAdditions.m in Sources */,
@@ -562,6 +573,7 @@
 				49A1718615E9979F008ED4C9 /* RouteField.m in Sources */,
 				49A1718B15E99872008ED4C9 /* MainSubmitButton.m in Sources */,
 				499CEFF915E99D29000AECBF /* Direction.m in Sources */,
+				494CB61015F1C20300152AB3 /* Stop.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

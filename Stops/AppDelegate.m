@@ -1,6 +1,6 @@
 #import "AppDelegate.h"
 #import "NextArrivalViewController.h"
-#import "DirectionsFetcher.h"
+#import "RouteFetcher.h"
 
 #if RUN_KIF_TESTS
 #import "STestController.h"
@@ -12,11 +12,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    DirectionsFetcher *fetcher = [[DirectionsFetcher alloc] init];
+    RouteFetcher *fetcher = [[RouteFetcher alloc] init];
     NextArrivalViewController *nextArrivalViewController =
-    [[NextArrivalViewController alloc] initWithFetcher:fetcher
-                             directionButtonDimensions:CGRectMake(10, 240, 300, 40)
-                               directionButtonYPadding:10];
+    [[NextArrivalViewController alloc] initWithRouteFetcher:fetcher
+                                  directionButtonDimensions:CGRectMake(10, 240, 300, 40)
+                                    directionButtonYPadding:10];
     fetcher.delegate = nextArrivalViewController;
     self.window.rootViewController = nextArrivalViewController;
     
