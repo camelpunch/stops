@@ -10,7 +10,7 @@
 @property (strong, nonatomic) UIButton *findButton;
 @property (strong, nonatomic) UITextField *routeField;
 @property (strong, nonatomic) UILabel *nextArrivalTimeLabel;
-@property (strong, nonatomic) id<ActivityDelegate> activityDelegate;
+@property (weak, nonatomic) id<ActivityDelegate> activityDelegate;
 
 - (id)initWithRouteFetcher:(RouteFetcher *)aDirectionsFetcher
  directionButtonDimensions:(CGRect)directionButtonDimensions

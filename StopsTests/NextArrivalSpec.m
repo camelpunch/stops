@@ -1,4 +1,5 @@
 #import "Kiwi.h"
+#import <OCMock.h>
 #import "NextArrivalViewController.h"
 #import "RouteFetcher.h"
 #import "Direction.h"
@@ -14,42 +15,44 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
     __block Direction *outbound;
     __block CGRect directionButtonDimensions;
     __block CGFloat verticalPadding;
-    __block id activityDelegate;
+    __weak __block id activityDelegate;
     
     beforeEach(^{
-        routeFetcher = [RouteFetcher mock];
-        activityDelegate = [KWMock nullMockForProtocol:@protocol(ActivityDelegate)];
+        routeFetcher = [OCMockObject mockForClass:[RouteFetcher class]];
+        activityDelegate = [OCMockObject mockForProtocol:@protocol(ActivityDelegate)];
         directionButtonDimensions = CGRectMake(10, 20, 30, 40);
         verticalPadding = 10;
         controller = [[NextArrivalViewController alloc] initWithRouteFetcher:routeFetcher
                                                    directionButtonDimensions:directionButtonDimensions
                                                      directionButtonYPadding:verticalPadding];
-        controller.activityDelegate = activityDelegate;
         inbound = [[Direction alloc] initWithName:@"Inbound to Hell"];
         outbound = [[Direction alloc] initWithName:@"Outbound to Heaven"];
     });
     
-    describe(@"clicking the find button", ^{
-        beforeEach(^{
-            [routeFetcher stub:@selector(fetchRoute:)];
-        });
-        
+    afterEach(^{
+        [routeFetcher verify];
+        [activityDelegate verify];
+    });
+    
+    describe(@"clicking the find button", ^{      
         it(@"retrieves directions for the given route number", ^{
             [controller view];
             controller.routeField.text = @"22";
-            [[routeFetcher should] receive:@selector(fetchRoute:) withArguments:@"22"];
+            [[routeFetcher expect] fetchRoute:@"22"];
             [controller.findButton sendActionsForControlEvents:UIControlEventTouchUpInside];
         });
         
         it(@"notifies the activity delegate", ^{
             [controller view];
-            KWCaptureSpy *spy = [activityDelegate captureArgument:@selector(activityStartedOnView:) atIndex:0];
+            [[routeFetcher stub] fetchRoute:OCMOCK_ANY];
+            controller.activityDelegate = activityDelegate;
+            [[activityDelegate expect] activityStartedOnView:controller.view];
             [controller.findButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-            [[spy.argument should] equal:controller.view];
         });
         
         it(@"removes any previous direction buttons", ^{
             [controller view];
+            
             [controller addDirection:inbound];
             
             UIButton *directionButton = [controller.view.subviews lastObject];
@@ -57,8 +60,11 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             UIView *anotherView = [[UIView alloc] init];
             [controller.view addSubview:anotherView];
             
+            [[routeFetcher stub] fetchRoute:OCMOCK_ANY];
+            
             NSUInteger buttonCountBefore = controller.view.subviews.count;
             [controller.findButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+            
             [[theValue(controller.view.subviews.count) should] equal:theValue(buttonCountBefore - 1)];
             [[controller.view.subviews should] contain:anotherView];
             [[controller.view.subviews shouldNot] contain:directionButton];
@@ -76,9 +82,9 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
         });
         
         it(@"notifies the activity delegate", ^{
-            KWCaptureSpy *spy = [activityDelegate captureArgument:@selector(activityStoppedOnView:) atIndex:0];
+            controller.activityDelegate = activityDelegate;
+            [[activityDelegate expect] activityStoppedOnView:controller.view];
             [controller addDirection:outbound];
-            [[spy.argument should] equal:controller.view];
         });
         
         it(@"displays the first direction as a button with appropriate text", ^{
@@ -97,7 +103,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
         });
         
         it(@"resets the position of new buttons when find has been pressed", ^{
-            [routeFetcher stub:@selector(fetchRoute:)];
+            [[routeFetcher stub] fetchRoute:OCMOCK_ANY];
 
             [controller addDirection:outbound];
             [controller addDirection:inbound];
@@ -115,19 +121,18 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
         beforeEach(^{
             [controller addDirection:inbound];
             button = [controller.view.subviews lastObject];
-            [routeFetcher stub:@selector(fetchStopsForDirection:)];
         });
         
         it(@"notifies the activity delegate", ^{
-            KWCaptureSpy *spy = [activityDelegate captureArgument:@selector(activityStartedOnView:) atIndex:0];
+            [[routeFetcher stub] fetchStopsForDirection:OCMOCK_ANY];
+            controller.activityDelegate = activityDelegate;
+            [[activityDelegate expect] activityStartedOnView:controller.view];
             [button sendActionsForControlEvents:UIControlEventTouchUpInside];
-            [[spy.argument should] equal:controller.view];
         });
         
         it(@"requests stops from the fetcher", ^{
-            KWCaptureSpy *spy = [routeFetcher captureArgument:@selector(fetchStopsForDirection:) atIndex:0];
+            [[routeFetcher expect] fetchStopsForDirection:inbound];
             [button sendActionsForControlEvents:UIControlEventTouchUpInside];
-            [[spy.argument should] equal:inbound];
         });
     });
         
@@ -143,7 +148,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             //// choose a direction
             [controller addDirection:inbound];
             button = [controller.view.subviews lastObject];
-            [routeFetcher stub:@selector(fetchStopsForDirection:)];
+            [[routeFetcher stub] fetchStopsForDirection:OCMOCK_ANY];
             [button sendActionsForControlEvents:UIControlEventTouchUpInside];
             ////
 
@@ -154,9 +159,9 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
         });
         
         it(@"notifies the activity delegate", ^{
-            KWCaptureSpy *spy = [activityDelegate captureArgument:@selector(activityStoppedOnView:) atIndex:0];
+            controller.activityDelegate = activityDelegate;
+            [[activityDelegate expect] activityStoppedOnView:controller.view];
             [controller addStops:stops];
-            [[spy.argument should] equal:controller.view];
         });
         
         it(@"prompts the user with a stop picker", ^{
