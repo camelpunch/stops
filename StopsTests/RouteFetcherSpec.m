@@ -20,7 +20,7 @@ describe(@"fetching a named route", ^{
         inbound = [[Direction alloc] initWithName:@"Inbound to the Marina District"];
     });
     
-    pending_(@"sends Direction values back to the delegate", ^{
+    pending_(@"sends Direction values to the delegate", ^{
         [recipient expectDirection:inbound];
         [recipient expectDirection:outbound];
         [fetcher fetchRoute:@"43"];
@@ -28,7 +28,7 @@ describe(@"fetching a named route", ^{
         [[expectFutureValue(recipient.receivedDirections) shouldEventually] contain:outbound];
     });
     
-    pending_(@"sends Stop values back to the delegate", ^{
+    pending_(@"sends Stop values to the delegate", ^{
         Stop *chestnutAndFillmore = [[Stop alloc] initWithName:@"Chestnut St & Fillmore St"
                                                      direction:outbound];
         Stop *masonicAndGeary = [[Stop alloc] initWithName:@"Masonic Ave & Geary Blvd"

@@ -14,6 +14,9 @@
 		494CB60E15F1C20300152AB3 /* Stop.m in Sources */ = {isa = PBXBuildFile; fileRef = 494CB60D15F1C20300152AB3 /* Stop.m */; };
 		494CB61015F1C20300152AB3 /* Stop.m in Sources */ = {isa = PBXBuildFile; fileRef = 494CB60D15F1C20300152AB3 /* Stop.m */; };
 		494CB61415F1C79E00152AB3 /* StopSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 494CB61315F1C79E00152AB3 /* StopSpec.m */; };
+		497A5D9715F3C52F003F70EA /* ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 497A5D9615F3C52F003F70EA /* ActivityIndicator.m */; };
+		497A5D9815F3C52F003F70EA /* ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 497A5D9615F3C52F003F70EA /* ActivityIndicator.m */; };
+		497A5D9B15F3C66A003F70EA /* ActivityIndicatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 497A5D9A15F3C66A003F70EA /* ActivityIndicatorSpec.m */; };
 		497B641615EAEC820050CC2A /* FakeRouteRecipient.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B641515EAEC820050CC2A /* FakeRouteRecipient.m */; };
 		49965EB415E954F1008B516D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB315E954F1008B516D /* UIKit.framework */; };
 		49965EB615E954F1008B516D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB515E954F1008B516D /* Foundation.framework */; };
@@ -105,6 +108,10 @@
 		494CB60C15F1C20300152AB3 /* Stop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stop.h; sourceTree = "<group>"; };
 		494CB60D15F1C20300152AB3 /* Stop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stop.m; sourceTree = "<group>"; };
 		494CB61315F1C79E00152AB3 /* StopSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopSpec.m; sourceTree = "<group>"; };
+		497A5D9315F3BCF0003F70EA /* ActivityDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDelegate.h; sourceTree = "<group>"; };
+		497A5D9515F3C52F003F70EA /* ActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicator.h; sourceTree = "<group>"; };
+		497A5D9615F3C52F003F70EA /* ActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicator.m; sourceTree = "<group>"; };
+		497A5D9A15F3C66A003F70EA /* ActivityIndicatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicatorSpec.m; sourceTree = "<group>"; };
 		497B641415EAEC820050CC2A /* FakeRouteRecipient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeRouteRecipient.h; sourceTree = "<group>"; };
 		497B641515EAEC820050CC2A /* FakeRouteRecipient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeRouteRecipient.m; sourceTree = "<group>"; };
 		49965EAF15E954F1008B516D /* Stops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stops.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +203,26 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		497A5D9215F3BCD2003F70EA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				497A5D9315F3BCF0003F70EA /* ActivityDelegate.h */,
+				4927E6E215E9B88000AADD70 /* DirectionRecipient.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		497A5D9415F3BD4F003F70EA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				49965EFE15E96069008B516D /* RouteFetcher.h */,
+				49965EFF15E96069008B516D /* RouteFetcher.m */,
+				497A5D9515F3C52F003F70EA /* ActivityIndicator.h */,
+				497A5D9615F3C52F003F70EA /* ActivityIndicator.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		49965EA415E954F1008B516D = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +265,7 @@
 				49965EC315E954F1008B516D /* AppDelegate.m */,
 				499CEFF415E99D0B000AECBF /* Values */,
 				49965EFD15E96057008B516D /* Objects */,
+				497A5D9215F3BCD2003F70EA /* Protocols */,
 				49965EBA15E954F1008B516D /* Supporting Files */,
 			);
 			path = Stops;
@@ -263,6 +291,7 @@
 				4927E6D915E9B33500AADD70 /* RouteFetcherSpec.m */,
 				493CC8E815E9C31A0056A257 /* DirectionSpec.m */,
 				494CB61315F1C79E00152AB3 /* StopSpec.m */,
+				497A5D9A15F3C66A003F70EA /* ActivityIndicatorSpec.m */,
 				49EB73C615EAD0D900A3F520 /* XMLFixture.h */,
 				49EB73C715EAD0D900A3F520 /* XMLFixture.m */,
 				497B641415EAEC820050CC2A /* FakeRouteRecipient.h */,
@@ -305,9 +334,7 @@
 			children = (
 				49965EF815E95C33008B516D /* ViewControllers */,
 				493809DD15E995BA00CAD3F1 /* Views */,
-				49965EFE15E96069008B516D /* RouteFetcher.h */,
-				49965EFF15E96069008B516D /* RouteFetcher.m */,
-				4927E6E215E9B88000AADD70 /* DirectionRecipient.h */,
+				497A5D9415F3BD4F003F70EA /* Services */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -542,6 +569,7 @@
 				49A1718915E99872008ED4C9 /* MainSubmitButton.m in Sources */,
 				499CEFF715E99D29000AECBF /* Direction.m in Sources */,
 				494CB60E15F1C20300152AB3 /* Stop.m in Sources */,
+				497A5D9715F3C52F003F70EA /* ActivityIndicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +583,7 @@
 				49EB73C815EAD0D900A3F520 /* XMLFixture.m in Sources */,
 				497B641615EAEC820050CC2A /* FakeRouteRecipient.m in Sources */,
 				494CB61415F1C79E00152AB3 /* StopSpec.m in Sources */,
+				497A5D9B15F3C66A003F70EA /* ActivityIndicatorSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +603,7 @@
 				49A1718B15E99872008ED4C9 /* MainSubmitButton.m in Sources */,
 				499CEFF915E99D29000AECBF /* Direction.m in Sources */,
 				494CB61015F1C20300152AB3 /* Stop.m in Sources */,
+				497A5D9815F3C52F003F70EA /* ActivityIndicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

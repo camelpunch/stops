@@ -1,6 +1,8 @@
 #import "AppDelegate.h"
 #import "NextArrivalViewController.h"
 #import "RouteFetcher.h"
+#import "StopsActivityIndicatorView.h"
+#import "ActivityIndicator.h"
 
 #if RUN_KIF_TESTS
 #import "STestController.h"
@@ -17,6 +19,11 @@
     [[NextArrivalViewController alloc] initWithRouteFetcher:fetcher
                                   directionButtonDimensions:CGRectMake(10, 240, 300, 40)
                                     directionButtonYPadding:10];
+    
+    nextArrivalViewController.activityDelegate =
+    [[ActivityIndicator alloc] initWithIndicatorView:
+     [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge]];
+    
     fetcher.delegate = nextArrivalViewController;
     self.window.rootViewController = nextArrivalViewController;
     

@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo ipfw pipe 1 config bw 16Kbit/s delay 350ms
+sudo ipfw add 1 pipe 1 src-port 80
+sudo ipfw add 2 pipe 1 dst-port 80
+

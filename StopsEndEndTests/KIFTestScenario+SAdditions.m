@@ -21,7 +21,7 @@
     [scenario addStep:
      [KIFTestStep stepToTapViewWithAccessibilityLabel:@"Outbound to Potrero Hill"]];
     [scenario addStep:
-     [KIFTestStep stepToSelectPickerViewRowWithTitle:@"Fillmore St & Bay St"]];
+     [KIFTestStep stepToSelectPickerViewRowWithTitle:@"Fillmore St & North Point St"]];
     
     [scenario addStep:
      [KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Arrival Time"]];

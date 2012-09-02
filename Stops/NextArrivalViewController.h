@@ -3,13 +3,14 @@
 
 @class RouteFetcher;
 @class StopsFetcher;
+@protocol ActivityDelegate;
 
 @interface NextArrivalViewController : UIViewController<UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,RouteRecipient>
 
 @property (strong, nonatomic) UIButton *findButton;
 @property (strong, nonatomic) UITextField *routeField;
-@property (strong, nonatomic) UIActivityIndicatorView *spinner;
 @property (strong, nonatomic) UILabel *nextArrivalTimeLabel;
+@property (strong, nonatomic) id<ActivityDelegate> activityDelegate;
 
 - (id)initWithRouteFetcher:(RouteFetcher *)aDirectionsFetcher
  directionButtonDimensions:(CGRect)directionButtonDimensions

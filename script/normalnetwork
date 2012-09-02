@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo ipfw delete 1
+sudo ipfw delete 2
+sudo ipfw pipe 1 delete
+
