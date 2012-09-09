@@ -21,6 +21,7 @@
     [theIndicatorView startAnimating];
 }
 
+// TODO make nilad
 - (void)activityStoppedOnView:(UIView *)aView
 {
     [theIndicatorView stopAnimating];

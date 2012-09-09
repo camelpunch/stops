@@ -16,8 +16,8 @@ describe(@"fetching a named route", ^{
         recipient = [[FakeRouteRecipient alloc] init];
         fetcher = [[RouteFetcher alloc] init];
         fetcher.delegate = recipient;
-        outbound = [[Direction alloc] initWithName:@"Outbound to the Crocker-Amazon District"];
-        inbound = [[Direction alloc] initWithName:@"Inbound to the Marina District"];
+        outbound = [Direction directionNamed:@"Outbound to the Crocker-Amazon District"];
+        inbound = [Direction directionNamed:@"Inbound to the Marina District"];
     });
     
     pending_(@"sends Direction values to the delegate", ^{

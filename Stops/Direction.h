@@ -2,7 +2,7 @@
 
 @interface Direction : NSObject
 
-- (id)initWithName:(NSString *)name;
++ (id)directionNamed:(NSString *)aName;
 - (NSString *)name;
 
 @end

@@ -12,15 +12,15 @@ describe(@"a Stop value", ^{
     });
     
     it(@"has a direction", ^{
-        Direction *outbound = [[Direction alloc] initWithName:@"Outbound"];
+        Direction *outbound = [Direction directionNamed:@"Outbound"];
         Stop *stop = [[Stop alloc] initWithName:nil
                                       direction:outbound];
         [[stop.direction should] equal:outbound];
     });
     
     it(@"is equal to other Stops with the same values", ^{
-        Direction *north = [[Direction alloc] initWithName:@"North"];
-        Direction *south = [[Direction alloc] initWithName:@"South"];
+        Direction *north = [Direction directionNamed:@"North"];
+        Direction *south = [Direction directionNamed:@"South"];
         
         Stop *stop = [[Stop alloc] initWithName:@"Chestnut St & Fillmore St"
                                       direction:north];
@@ -37,7 +37,7 @@ describe(@"a Stop value", ^{
     });
     
     it(@"has a useful description", ^{
-        Direction *direction = [[Direction alloc] initWithName:@"Outbound"];
+        Direction *direction = [Direction directionNamed:@"Outbound"];
         Stop *stop = [[Stop alloc] initWithName:@"Presidio Blvd & Letterman Dr"
                                       direction:direction];
         [[[stop description] should] equal:@"Stop: <Presidio Blvd & Letterman Dr> Direction: <Outbound>"];

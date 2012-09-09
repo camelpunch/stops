@@ -6,36 +6,21 @@
 #import "Stop.h"
 #import "ActivityDelegate.h"
 
+static id const UNUSED_FETCHER = nil;
+static UIPickerView * const UNUSED_PICKER = nil;
+static CGRect const UNUSED_DIMENSIONS = {0, 0};
+static NSUInteger const UNUSED_PADDING = 0;
+
 SPEC_BEGIN(NextArrivalSpec)
 
-describe(@"getting the next arrival for a stop in a chosen direction", ^{
-    __block id routeFetcher;
-    __block NextArrivalViewController *controller;
-    __block Direction *inbound;
-    __block Direction *outbound;
-    __block CGRect directionButtonDimensions;
-    __block CGFloat verticalPadding;
-    __weak __block id activityDelegate;
-    
-    beforeEach(^{
-        routeFetcher = [OCMockObject mockForClass:[RouteFetcher class]];
-        activityDelegate = [OCMockObject mockForProtocol:@protocol(ActivityDelegate)];
-        directionButtonDimensions = CGRectMake(10, 20, 30, 40);
-        verticalPadding = 10;
-        controller = [[NextArrivalViewController alloc] initWithRouteFetcher:routeFetcher
-                                                   directionButtonDimensions:directionButtonDimensions
-                                                     directionButtonYPadding:verticalPadding];
-        inbound = [[Direction alloc] initWithName:@"Inbound to Hell"];
-        outbound = [[Direction alloc] initWithName:@"Outbound to Heaven"];
-    });
-    
-    afterEach(^{
-        [routeFetcher verify];
-        [activityDelegate verify];
-    });
-    
-    describe(@"clicking the find button", ^{      
-        it(@"retrieves directions for the given route number", ^{
+describe(@"getting the next arrival for a stop in a chosen direction", ^{      
+    describe(@"tapping find", ^{      
+        it(@"retrieves directions for the route entered", ^{
+            id routeFetcher = [OCMockObject mockForClass:[RouteFetcher class]];
+            NextArrivalViewController *controller =
+            [[NextArrivalViewController alloc] initWithRouteFetcher:routeFetcher
+                                          directionButtonDimensions:UNUSED_DIMENSIONS
+                                            directionButtonYPadding:UNUSED_PADDING];
             [controller view];
             controller.routeField.text = @"22";
             [[routeFetcher expect] fetchRoute:@"22"];
@@ -43,154 +28,184 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
         });
         
         it(@"notifies the activity delegate", ^{
+            NextArrivalViewController *controller =
+            [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                          directionButtonDimensions:UNUSED_DIMENSIONS
+                                            directionButtonYPadding:UNUSED_PADDING];
             [controller view];
-            [[routeFetcher stub] fetchRoute:OCMOCK_ANY];
-            controller.activityDelegate = activityDelegate;
-            [[activityDelegate expect] activityStartedOnView:controller.view];
+            __weak id delegate = [OCMockObject mockForProtocol:@protocol(ActivityDelegate)];
+            controller.activityDelegate = delegate;
+            
+            [[controller.findButton shouldNot] beNil];
+            [[delegate expect] activityStartedOnView:controller.view];
             [controller.findButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+            [delegate verify];
         });
         
         it(@"removes any previous direction buttons", ^{
-            [controller view];
+            NextArrivalViewController *controller =
+            [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                          directionButtonDimensions:UNUSED_DIMENSIONS
+                                            directionButtonYPadding:UNUSED_PADDING];
             
-            [controller addDirection:inbound];
-            
-            UIButton *directionButton = [controller.view.subviews lastObject];
-            
+            UIView *view = controller.view;
+            [controller addDirection:[[Direction alloc] init]];
+            UIButton *directionButton = [view.subviews lastObject];
             UIView *anotherView = [[UIView alloc] init];
-            [controller.view addSubview:anotherView];
-            
-            [[routeFetcher stub] fetchRoute:OCMOCK_ANY];
-            
-            NSUInteger buttonCountBefore = controller.view.subviews.count;
+            [view addSubview:anotherView];
+                        
             [controller.findButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-            
-            [[theValue(controller.view.subviews.count) should] equal:theValue(buttonCountBefore - 1)];
-            [[controller.view.subviews should] contain:anotherView];
-            [[controller.view.subviews shouldNot] contain:directionButton];
+            [[view.subviews should] contain:anotherView];
+            [[view.subviews shouldNot] contain:directionButton];
         });
     });
     
     describe(@"when a direction is received", ^{
-        __block NSUInteger initialSubviewsCount;
-        __block UIButton *firstButton;
-        __block UIButton *secondButton;
-        
-        beforeEach(^{
-            [controller view];
-            initialSubviewsCount = controller.view.subviews.count;
-        });
-        
         it(@"notifies the activity delegate", ^{
-            controller.activityDelegate = activityDelegate;
-            [[activityDelegate expect] activityStoppedOnView:controller.view];
-            [controller addDirection:outbound];
+            NextArrivalViewController *controller =
+            [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                          directionButtonDimensions:UNUSED_DIMENSIONS
+                                            directionButtonYPadding:UNUSED_PADDING];
+            __weak id delegate = [OCMockObject mockForProtocol:@protocol(ActivityDelegate)];
+            controller.activityDelegate = delegate;
+            [[delegate expect] activityStoppedOnView:controller.view];
+            [controller addDirection:[Direction directionNamed:@"outbound"]];
+            [delegate verify];
         });
         
         it(@"displays the first direction as a button with appropriate text", ^{
-            [controller addDirection:outbound];
-            [[[controller.view should] have:initialSubviewsCount + 1] subviews];
-            firstButton = [controller.view.subviews lastObject];
-            [[firstButton.titleLabel.text should] equal:@"Outbound to Heaven"];
+            NextArrivalViewController *controller =
+            [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                          directionButtonDimensions:UNUSED_DIMENSIONS
+                                            directionButtonYPadding:UNUSED_PADDING];
+            [controller addDirection:[Direction directionNamed:@"Outbound to Heaven"]];
+            UIButton *button = [controller.view.subviews lastObject];
+            [[button.titleLabel.text should] equal:@"Outbound to Heaven"];
         });
     
         it(@"displays subsequent direction buttons beneath the previous button, with provided padding", ^{
-            [controller addDirection:outbound];
-            [controller addDirection:inbound];
-            secondButton = [controller.view.subviews lastObject];
+            CGFloat padding = 42;
+            NextArrivalViewController *controller =
+            [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                          directionButtonDimensions:UNUSED_DIMENSIONS
+                                            directionButtonYPadding:padding];
+            [controller addDirection:[Direction directionNamed:@"Outbound to Heaven"]];
+            UIButton *firstButton = [controller.view.subviews lastObject];
+            [controller addDirection:[Direction directionNamed:@"Inbound to Hell"]];
+            UIButton *secondButton = [controller.view.subviews lastObject];
             [[theValue(secondButton.frame.origin.y) should]
-             equal:theValue(firstButton.frame.origin.y + firstButton.frame.size.height + verticalPadding)];
+             equal:theValue(firstButton.frame.origin.y + firstButton.frame.size.height + padding)];
         });
         
-        it(@"resets the position of new buttons when find has been pressed", ^{
-            [[routeFetcher stub] fetchRoute:OCMOCK_ANY];
-
-            [controller addDirection:outbound];
-            [controller addDirection:inbound];
+        it(@"resets the vertical position of new buttons when find has been pressed", ^{
+            CGFloat verticalPosition = 15;
+            NextArrivalViewController *controller =
+            [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                          directionButtonDimensions:CGRectMake(0, verticalPosition, 0, 0)
+                                            directionButtonYPadding:UNUSED_PADDING];
+            [controller addDirection:[[Direction alloc] init]];
+            [controller addDirection:[[Direction alloc] init]];
             [controller.findButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-            [controller addDirection:outbound];
-            
-            firstButton = [controller.view.subviews lastObject];
-            [[theValue(firstButton.frame.origin.y) should] equal:theValue(directionButtonDimensions.origin.y)];
+            [controller addDirection:[[Direction alloc] init]];            
+            UIButton *button = [controller.view.subviews lastObject];
+            [[theValue(button.frame.origin.y) should] equal:theValue(verticalPosition)];
         });
     });
 
-    describe(@"clicking a direction button", ^{
-        __block UIButton *button;
-        
-        beforeEach(^{
-            [controller addDirection:inbound];
-            button = [controller.view.subviews lastObject];
-        });
-        
+    describe(@"tapping a direction", ^{
         it(@"notifies the activity delegate", ^{
-            [[routeFetcher stub] fetchStopsForDirection:OCMOCK_ANY];
-            controller.activityDelegate = activityDelegate;
-            [[activityDelegate expect] activityStartedOnView:controller.view];
+            NextArrivalViewController *controller =
+            [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                          directionButtonDimensions:UNUSED_DIMENSIONS
+                                            directionButtonYPadding:UNUSED_PADDING];
+            UIView *view = controller.view;
+            [controller addDirection:[[Direction alloc] init]];
+            UIButton *button = [view.subviews lastObject];
+            __weak id delegate = [OCMockObject mockForProtocol:@protocol(ActivityDelegate)];
+            controller.activityDelegate = delegate;
+            
+            [[delegate expect] activityStartedOnView:controller.view];
             [button sendActionsForControlEvents:UIControlEventTouchUpInside];
+            [delegate verify];
         });
         
         it(@"requests stops from the fetcher", ^{
+            id routeFetcher = [OCMockObject mockForClass:[RouteFetcher class]];
+            Direction *inbound = [Direction directionNamed:@"inbound"];
+            NextArrivalViewController *controller =
+            [[NextArrivalViewController alloc] initWithRouteFetcher:routeFetcher
+                                          directionButtonDimensions:UNUSED_DIMENSIONS
+                                            directionButtonYPadding:UNUSED_PADDING];
+            UIView *view = controller.view;
+            [controller addDirection:inbound];
+            UIButton *button = [view.subviews lastObject];
+
             [[routeFetcher expect] fetchStopsForDirection:inbound];
             [button sendActionsForControlEvents:UIControlEventTouchUpInside];
+            [routeFetcher verify];
         });
     });
         
     describe(@"when stops are received", ^{
-        __block UIPickerView *picker;
-        __block UIButton *button;
-        __block Stop *inboundStop1;
-        __block Stop *inboundStop2;
-        __block Stop *outboundStop1;
-        __block NSArray *stops;
-        
-        beforeEach(^{
-            //// choose a direction
-            [controller addDirection:inbound];
-            button = [controller.view.subviews lastObject];
-            [[routeFetcher stub] fetchStopsForDirection:OCMOCK_ANY];
-            [button sendActionsForControlEvents:UIControlEventTouchUpInside];
-            ////
-
-            inboundStop1 = [[Stop alloc] initWithName:@"Fillmore St & Bay St" direction:inbound];
-            inboundStop2 = [[Stop alloc] initWithName:@"Some Other Stop" direction:inbound];
-            outboundStop1 = [[Stop alloc] initWithName:@"Some Outbound Stop" direction:outbound];
-            stops = [NSArray arrayWithObjects:inboundStop1, inboundStop2, outboundStop1, nil];
-        });
-        
         it(@"notifies the activity delegate", ^{
-            controller.activityDelegate = activityDelegate;
-            [[activityDelegate expect] activityStoppedOnView:controller.view];
-            [controller addStops:stops];
+            NextArrivalViewController *controller =
+            [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                          directionButtonDimensions:UNUSED_DIMENSIONS
+                                            directionButtonYPadding:UNUSED_PADDING];
+            __weak id delegate = [OCMockObject mockForProtocol:@protocol(ActivityDelegate)];
+            controller.activityDelegate = delegate;
+
+            [[delegate expect] activityStoppedOnView:controller.view];
+            [controller addStops:[NSArray array]];
+            [delegate verify];
         });
         
         it(@"prompts the user with a stop picker", ^{
+            NextArrivalViewController *controller =
+            [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                          directionButtonDimensions:UNUSED_DIMENSIONS
+                                            directionButtonYPadding:UNUSED_PADDING];
+            NSArray *stops = [NSArray arrayWithObject:[[Stop alloc] init]];
             [controller addStops:stops];
-            picker = controller.view.subviews.lastObject;
+            UIPickerView *picker = controller.view.subviews.lastObject;
             
-            [[picker should] beKindOfClass:[UIPickerView class]];
             [[(NSObject *)picker.delegate should] equal:controller];
             [[(NSObject *)picker.dataSource should] equal:controller];
             
-            [[theValue([controller numberOfComponentsInPickerView:picker]) should] equal:theValue(1)];
+            [[theValue([controller numberOfComponentsInPickerView:picker]) should] equal:theValue(stops.count)];
         });
         
-        it(@"populates the picker with stops from the chosen direction", ^{
+        it(@"populates the picker with stop choices from the selected direction", ^{
+            NextArrivalViewController *controller =
+            [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                          directionButtonDimensions:UNUSED_DIMENSIONS
+                                            directionButtonYPadding:UNUSED_PADDING];
+            Direction *inbound = [Direction directionNamed:@"inbound"];
+            Stop *stop1 = [[Stop alloc] initWithName:@"Stop 1" direction:inbound];
+            Stop *stop2 = [[Stop alloc] initWithName:@"Stop 2" direction:inbound];
+            NSArray *stops = [NSArray arrayWithObjects:stop1, stop2, nil];
+            
+            [controller view];
+            [controller addDirection:inbound];
+            UIButton *directionButton = controller.view.subviews.lastObject;
+            [directionButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+            
             [controller addStops:stops];
-            [[theValue([controller pickerView:picker numberOfRowsInComponent:0]) should] equal:theValue(2)];            
-            [[[controller pickerView:picker titleForRow:0 forComponent:0] should] equal:inboundStop1.name];
-            [[[controller pickerView:picker titleForRow:1 forComponent:0] should] equal:inboundStop2.name];
+            [[theValue([controller pickerView:UNUSED_PICKER numberOfRowsInComponent:0]) should] equal:theValue(stops.count)];
+            [[[controller pickerView:UNUSED_PICKER titleForRow:0 forComponent:0] should] equal:@"Stop 1"];
+            [[[controller pickerView:UNUSED_PICKER titleForRow:1 forComponent:0] should] equal:@"Stop 2"];
         });
     });
 
-//    it(@"shows the next arrival time when a stop is selected", ^{
+//    it(@"fetches the next arrival time when a stop is selected", ^{
 //        Stop *stop = [[Stop alloc] initWithName:@"Fillmore St & Bay St" direction:inbound];
-//
 //        [controller addStops:[NSArray arrayWithObject:stop]];
-//
-//        [controller pickerView:picker didSelectRow:0 inComponent:0];
-//        UILabel *nextArrivalTime = controller.nextArrivalTimeLabel;
-//        [[nextArrivalTime.text should] equal:@""];
+//        [[predictor expect] predictArrivalOfRoute:@"43" atStop:stop];
+//        [controller pickerView:UNUSED_PICKER didSelectRow:0 inComponent:0];
 //    });
+
+    //    UILabel *nextArrivalTime = controller.nextArrivalTimeLabel;
+//    [[nextArrivalTime.text should] equal:@"5:35pm"];
+
 });
 SPEC_END

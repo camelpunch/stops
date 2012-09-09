@@ -93,6 +93,11 @@
     return stop.name;
 }
 
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    
+}
+
 #pragma mark private
 
 #pragma mark clicks
