@@ -3,7 +3,7 @@
 @protocol RouteRecipient;
 @class Direction;
 
-@interface RouteFetcher : NSObject<NSXMLParserDelegate>
+@interface NextBusRouteFetcher : NSObject<NSXMLParserDelegate>
 
 @property (weak, nonatomic) id<RouteRecipient> delegate;
 

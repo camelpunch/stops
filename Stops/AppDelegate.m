@@ -1,6 +1,6 @@
 #import "AppDelegate.h"
 #import "NextArrivalViewController.h"
-#import "RouteFetcher.h"
+#import "NextBusRouteFetcher.h"
 #import "StopsActivityIndicatorView.h"
 #import "ActivityIndicator.h"
 #import "NextBusPredictor.h"
@@ -15,7 +15,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    RouteFetcher *fetcher = [[RouteFetcher alloc] init];
+    NextBusRouteFetcher *fetcher = [[NextBusRouteFetcher alloc] init];
     NextBusPredictor *predictor = [[NextBusPredictor alloc] init];
     NextArrivalViewController *nextArrivalViewController =
     [[NextArrivalViewController alloc] initWithRouteFetcher:fetcher

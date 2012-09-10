@@ -39,11 +39,11 @@
 		49965ED915E954F1008B516D /* NextArrivalSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965ED815E954F1008B516D /* NextArrivalSpec.m */; };
 		49965EF715E95B94008B516D /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EEE15E956A0008B516D /* libKiwi.a */; };
 		49965EFB15E95C4D008B516D /* NextArrivalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFA15E95C4D008B516D /* NextArrivalViewController.m */; };
-		49965F0015E96069008B516D /* RouteFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFF15E96069008B516D /* RouteFetcher.m */; };
+		49965F0015E96069008B516D /* NextBusRouteFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFF15E96069008B516D /* NextBusRouteFetcher.m */; };
 		49965F0D15E9666D008B516D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EBF15E954F1008B516D /* main.m */; };
 		49965F0E15E9666D008B516D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EC315E954F1008B516D /* AppDelegate.m */; };
 		49965F0F15E9666D008B516D /* NextArrivalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFA15E95C4D008B516D /* NextArrivalViewController.m */; };
-		49965F1015E9666D008B516D /* RouteFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFF15E96069008B516D /* RouteFetcher.m */; };
+		49965F1015E9666D008B516D /* NextBusRouteFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965EFF15E96069008B516D /* NextBusRouteFetcher.m */; };
 		49965F1215E9666D008B516D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB315E954F1008B516D /* UIKit.framework */; };
 		49965F1315E9666D008B516D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB515E954F1008B516D /* Foundation.framework */; };
 		49965F1415E9666D008B516D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB715E954F1008B516D /* CoreGraphics.framework */; };
@@ -157,8 +157,8 @@
 		49965EE215E956A0008B516D /* Kiwi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kiwi.xcodeproj; path = Frameworks/Kiwi/Kiwi.xcodeproj; sourceTree = "<group>"; };
 		49965EF915E95C4D008B516D /* NextArrivalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextArrivalViewController.h; sourceTree = "<group>"; };
 		49965EFA15E95C4D008B516D /* NextArrivalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextArrivalViewController.m; sourceTree = "<group>"; };
-		49965EFE15E96069008B516D /* RouteFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteFetcher.h; sourceTree = "<group>"; };
-		49965EFF15E96069008B516D /* RouteFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteFetcher.m; sourceTree = "<group>"; };
+		49965EFE15E96069008B516D /* NextBusRouteFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextBusRouteFetcher.h; sourceTree = "<group>"; };
+		49965EFF15E96069008B516D /* NextBusRouteFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextBusRouteFetcher.m; sourceTree = "<group>"; };
 		49965F0215E9665D008B516D /* KIF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KIF.xcodeproj; path = Frameworks/KIF/KIF.xcodeproj; sourceTree = "<group>"; };
 		49965F1A15E9666D008B516D /* StopsEndEndTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopsEndEndTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49965F1C15E9666E008B516D /* Stops copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Stops copy-Info.plist"; path = "/Users/andrew/dev/Stops/Stops copy-Info.plist"; sourceTree = "<absolute>"; };
@@ -266,8 +266,8 @@
 		497A5D9415F3BD4F003F70EA /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				49965EFE15E96069008B516D /* RouteFetcher.h */,
-				49965EFF15E96069008B516D /* RouteFetcher.m */,
+				49965EFE15E96069008B516D /* NextBusRouteFetcher.h */,
+				49965EFF15E96069008B516D /* NextBusRouteFetcher.m */,
 				497A5D9515F3C52F003F70EA /* ActivityIndicator.h */,
 				497A5D9615F3C52F003F70EA /* ActivityIndicator.m */,
 				4958F54215FC69230032A0F1 /* NextBusPredictor.h */,
@@ -623,7 +623,7 @@
 				49965EC015E954F1008B516D /* main.m in Sources */,
 				49965EC415E954F1008B516D /* AppDelegate.m in Sources */,
 				49965EFB15E95C4D008B516D /* NextArrivalViewController.m in Sources */,
-				49965F0015E96069008B516D /* RouteFetcher.m in Sources */,
+				49965F0015E96069008B516D /* NextBusRouteFetcher.m in Sources */,
 				493809E015E995D600CAD3F1 /* StopsActivityIndicatorView.m in Sources */,
 				49A1718415E9979F008ED4C9 /* RouteField.m in Sources */,
 				49A1718915E99872008ED4C9 /* MainSubmitButton.m in Sources */,
@@ -659,7 +659,7 @@
 				49965F0D15E9666D008B516D /* main.m in Sources */,
 				49965F0E15E9666D008B516D /* AppDelegate.m in Sources */,
 				49965F0F15E9666D008B516D /* NextArrivalViewController.m in Sources */,
-				49965F1015E9666D008B516D /* RouteFetcher.m in Sources */,
+				49965F1015E9666D008B516D /* NextBusRouteFetcher.m in Sources */,
 				49965F2115E9673F008B516D /* STestController.m in Sources */,
 				49965F2415E9678F008B516D /* KIFTestScenario+SAdditions.m in Sources */,
 				49965F2715E9686F008B516D /* KIFTestStep+SAdditions.m in Sources */,

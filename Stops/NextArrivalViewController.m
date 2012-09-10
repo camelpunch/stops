@@ -1,5 +1,5 @@
 #import "NextArrivalViewController.h"
-#import "RouteFetcher.h"
+#import "NextBusRouteFetcher.h"
 #import "Direction.h"
 #import "StopsActivityIndicatorView.h"
 #import "RouteField.h"
@@ -11,7 +11,7 @@
 
 @implementation NextArrivalViewController
 {
-    RouteFetcher *theRouteFetcher;
+    NextBusRouteFetcher *theRouteFetcher;
     id<Predictor> thePredictor;
     NSDateFormatter *theDateFormatter;
     Direction *theCurrentDirection;
@@ -28,7 +28,7 @@
 @synthesize routeField;
 @synthesize activityDelegate;
 
-- (id)initWithRouteFetcher:(RouteFetcher *)aRouteFetcher
+- (id)initWithRouteFetcher:(NextBusRouteFetcher *)aRouteFetcher
                  predictor:(id<Predictor>)aPredictor
  directionButtonDimensions:(CGRect)directionButtonDimensions
    directionButtonYPadding:(CGFloat)directionButtonYPadding

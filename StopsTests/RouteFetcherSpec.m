@@ -1,5 +1,5 @@
 #import "Kiwi.h"
-#import "RouteFetcher.h"
+#import "NextBusRouteFetcher.h"
 #import "Direction.h"
 #import "Stop.h"
 #import "FakeRouteRecipient.h"
@@ -8,13 +8,13 @@ SPEC_BEGIN(RouteFetcherSpec)
 
 describe(@"fetching a named route", ^{
     __block FakeRouteRecipient *recipient;
-    __block RouteFetcher *fetcher;
+    __block NextBusRouteFetcher *fetcher;
     __block Direction *outbound;
     __block Direction *inbound;
     
     beforeEach(^{
         recipient = [[FakeRouteRecipient alloc] init];
-        fetcher = [[RouteFetcher alloc] init];
+        fetcher = [[NextBusRouteFetcher alloc] init];
         fetcher.delegate = recipient;
         outbound = [Direction directionNamed:@"Outbound to the Crocker-Amazon District"];
         inbound = [Direction directionNamed:@"Inbound to the Marina District"];

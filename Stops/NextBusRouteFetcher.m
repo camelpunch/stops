@@ -1,9 +1,9 @@
-#import "RouteFetcher.h"
+#import "NextBusRouteFetcher.h"
 #import "DirectionRecipient.h"
 #import "Direction.h"
 #import "Stop.h"
 
-@implementation RouteFetcher
+@implementation NextBusRouteFetcher
 {
     BOOL theParseFinished;
     Direction *theCurrentDirection;

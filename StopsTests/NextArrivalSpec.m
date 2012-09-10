@@ -1,7 +1,7 @@
 #import "Kiwi.h"
 #import <OCMock.h>
 #import "NextArrivalViewController.h"
-#import "RouteFetcher.h"
+#import "NextBusRouteFetcher.h"
 #import "Direction.h"
 #import "Stop.h"
 #import "ActivityDelegate.h"
@@ -19,7 +19,7 @@ SPEC_BEGIN(NextArrivalSpec)
 describe(@"getting the next arrival for a stop in a chosen direction", ^{      
     describe(@"tapping find", ^{      
         it(@"retrieves directions for the route entered", ^{
-            id routeFetcher = [OCMockObject mockForClass:[RouteFetcher class]];
+            id routeFetcher = [OCMockObject mockForClass:[NextBusRouteFetcher class]];
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:routeFetcher
                                                           predictor:UNUSED_PREDICTOR
@@ -141,7 +141,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
         });
         
         it(@"requests stops from the fetcher", ^{
-            id routeFetcher = [OCMockObject mockForClass:[RouteFetcher class]];
+            id routeFetcher = [OCMockObject mockForClass:[NextBusRouteFetcher class]];
             Direction *inbound = [Direction directionNamed:@"inbound"];
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:routeFetcher
