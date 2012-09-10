@@ -47,7 +47,8 @@ didStartElement:(NSString *)elementName
     } else if ([elementName isEqualToString:@"stop"]) {
         NSString *stopTag = [attributeDict objectForKey:@"tag"];
         [theStops addObject:[[Stop alloc] initWithName:[theStopNames objectForKey:stopTag]
-                                             direction:theCurrentDirection]];
+                                             direction:theCurrentDirection
+                                                   tag:stopTag]];
     } else if ([elementName isEqualToString:@"direction"]) {
         Direction *direction = [Direction directionNamed:[attributeDict objectForKey:@"title"]];
         theCurrentDirection = direction;

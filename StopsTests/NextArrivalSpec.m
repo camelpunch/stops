@@ -5,8 +5,11 @@
 #import "Direction.h"
 #import "Stop.h"
 #import "ActivityDelegate.h"
+#import "Predictor.h"
+#import "Prediction.h"
 
 static id const UNUSED_FETCHER = nil;
+static id const UNUSED_PREDICTOR = nil;
 static UIPickerView * const UNUSED_PICKER = nil;
 static CGRect const UNUSED_DIMENSIONS = {0, 0};
 static NSUInteger const UNUSED_PADDING = 0;
@@ -19,6 +22,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             id routeFetcher = [OCMockObject mockForClass:[RouteFetcher class]];
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:routeFetcher
+                                                          predictor:UNUSED_PREDICTOR
                                           directionButtonDimensions:UNUSED_DIMENSIONS
                                             directionButtonYPadding:UNUSED_PADDING];
             [controller view];
@@ -30,6 +34,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
         it(@"notifies the activity delegate", ^{
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                                          predictor:UNUSED_PREDICTOR
                                           directionButtonDimensions:UNUSED_DIMENSIONS
                                             directionButtonYPadding:UNUSED_PADDING];
             [controller view];
@@ -45,6 +50,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
         it(@"removes any previous direction buttons", ^{
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                                          predictor:UNUSED_PREDICTOR
                                           directionButtonDimensions:UNUSED_DIMENSIONS
                                             directionButtonYPadding:UNUSED_PADDING];
             
@@ -64,6 +70,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
         it(@"notifies the activity delegate", ^{
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                                          predictor:UNUSED_PREDICTOR
                                           directionButtonDimensions:UNUSED_DIMENSIONS
                                             directionButtonYPadding:UNUSED_PADDING];
             __weak id delegate = [OCMockObject mockForProtocol:@protocol(ActivityDelegate)];
@@ -76,6 +83,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
         it(@"displays the first direction as a button with appropriate text", ^{
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                                          predictor:UNUSED_PREDICTOR
                                           directionButtonDimensions:UNUSED_DIMENSIONS
                                             directionButtonYPadding:UNUSED_PADDING];
             [controller addDirection:[Direction directionNamed:@"Outbound to Heaven"]];
@@ -87,6 +95,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             CGFloat padding = 42;
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                                          predictor:UNUSED_PREDICTOR
                                           directionButtonDimensions:UNUSED_DIMENSIONS
                                             directionButtonYPadding:padding];
             [controller addDirection:[Direction directionNamed:@"Outbound to Heaven"]];
@@ -101,6 +110,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             CGFloat verticalPosition = 15;
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                                          predictor:UNUSED_PREDICTOR
                                           directionButtonDimensions:CGRectMake(0, verticalPosition, 0, 0)
                                             directionButtonYPadding:UNUSED_PADDING];
             [controller addDirection:[[Direction alloc] init]];
@@ -116,6 +126,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
         it(@"notifies the activity delegate", ^{
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                                          predictor:UNUSED_PREDICTOR
                                           directionButtonDimensions:UNUSED_DIMENSIONS
                                             directionButtonYPadding:UNUSED_PADDING];
             UIView *view = controller.view;
@@ -134,6 +145,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             Direction *inbound = [Direction directionNamed:@"inbound"];
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:routeFetcher
+                                                          predictor:UNUSED_PREDICTOR
                                           directionButtonDimensions:UNUSED_DIMENSIONS
                                             directionButtonYPadding:UNUSED_PADDING];
             UIView *view = controller.view;
@@ -150,6 +162,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
         it(@"notifies the activity delegate", ^{
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                                          predictor:UNUSED_PREDICTOR
                                           directionButtonDimensions:UNUSED_DIMENSIONS
                                             directionButtonYPadding:UNUSED_PADDING];
             __weak id delegate = [OCMockObject mockForProtocol:@protocol(ActivityDelegate)];
@@ -163,6 +176,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
         it(@"prompts the user with a stop picker", ^{
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                                          predictor:UNUSED_PREDICTOR
                                           directionButtonDimensions:UNUSED_DIMENSIONS
                                             directionButtonYPadding:UNUSED_PADDING];
             NSArray *stops = [NSArray arrayWithObject:[[Stop alloc] init]];
@@ -178,11 +192,16 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
         it(@"populates the picker with stop choices from the selected direction", ^{
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                                          predictor:UNUSED_PREDICTOR
                                           directionButtonDimensions:UNUSED_DIMENSIONS
                                             directionButtonYPadding:UNUSED_PADDING];
             Direction *inbound = [Direction directionNamed:@"inbound"];
-            Stop *stop1 = [[Stop alloc] initWithName:@"Stop 1" direction:inbound];
-            Stop *stop2 = [[Stop alloc] initWithName:@"Stop 2" direction:inbound];
+            Stop *stop1 = [[Stop alloc] initWithName:@"Stop 1"
+                                           direction:inbound
+                                                 tag:@"123"];
+            Stop *stop2 = [[Stop alloc] initWithName:@"Stop 2"
+                                           direction:inbound
+                                                 tag:@"234"];
             NSArray *stops = [NSArray arrayWithObjects:stop1, stop2, nil];
             
             [controller view];
@@ -197,15 +216,40 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
         });
     });
 
-//    it(@"fetches the next arrival time when a stop is selected", ^{
-//        Stop *stop = [[Stop alloc] initWithName:@"Fillmore St & Bay St" direction:inbound];
-//        [controller addStops:[NSArray arrayWithObject:stop]];
-//        [[predictor expect] predictArrivalOfRoute:@"43" atStop:stop];
-//        [controller pickerView:UNUSED_PICKER didSelectRow:0 inComponent:0];
-//    });
+    it(@"requests a prediction when a stop is selected", ^{
+        id predictor = [OCMockObject mockForProtocol:@protocol(Predictor)];
+        NextArrivalViewController *controller =
+        [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                                      predictor:predictor
+                                      directionButtonDimensions:UNUSED_DIMENSIONS
+                                        directionButtonYPadding:UNUSED_PADDING];
+        [controller view];
+        Stop *stop = [[Stop alloc] initWithName:@"Fillmore St & Bay St"
+                                      direction:[Direction directionNamed:@"inbound"]
+                                            tag:@"123"];
+        controller.routeField.text = @"43";
+        [controller addStops:[NSArray arrayWithObject:stop]];
+        
+        [[predictor expect] predictArrivalOnRoute:@"43" atStop:stop];
+        [controller pickerView:UNUSED_PICKER didSelectRow:0 inComponent:0];
+        [predictor verify];
+    });
 
-    //    UILabel *nextArrivalTime = controller.nextArrivalTimeLabel;
-//    [[nextArrivalTime.text should] equal:@"5:35pm"];
+    it(@"shows the predicted arrival time when prediction is received", ^{
+        NextArrivalViewController *controller =
+        [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
+                                                      predictor:UNUSED_PREDICTOR
+                                      directionButtonDimensions:UNUSED_DIMENSIONS
+                                        directionButtonYPadding:UNUSED_PADDING];
+        [controller view];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"yyyy-MM-dd HH:mm";
+        NSDate *time = [formatter dateFromString:@"2013-04-25 22:35"];
+        [controller receivePrediction:[Prediction predictionWithDate:time]];
+        [[controller.view.subviews.lastObject should] equal:controller.nextArrivalTimeLabel];
+        [[controller.nextArrivalTimeLabel.accessibilityLabel should] equal:@"Arrival Time"];
+        [[controller.nextArrivalTimeLabel.text should] equal:@"10:35PM"];
+    });
 
 });
 SPEC_END

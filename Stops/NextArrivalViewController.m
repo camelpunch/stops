@@ -6,10 +6,14 @@
 #import "MainSubmitButton.h"
 #import "Stop.h"
 #import "ActivityDelegate.h"
+#import "Predictor.h"
+#import <UIKit/UIKit.h>
 
 @implementation NextArrivalViewController
 {
     RouteFetcher *theRouteFetcher;
+    id<Predictor> thePredictor;
+    NSDateFormatter *theDateFormatter;
     Direction *theCurrentDirection;
     NSMutableArray *theDirectionButtons;
     NSMutableArray *theDirections;
@@ -25,12 +29,15 @@
 @synthesize activityDelegate;
 
 - (id)initWithRouteFetcher:(RouteFetcher *)aRouteFetcher
+                 predictor:(id<Predictor>)aPredictor
  directionButtonDimensions:(CGRect)directionButtonDimensions
    directionButtonYPadding:(CGFloat)directionButtonYPadding
 {
     self = [super init];
     if (self) {
         theRouteFetcher = aRouteFetcher;
+        thePredictor = aPredictor;
+        theDateFormatter = [[NSDateFormatter alloc] init];
         theCurrentDirection = nil;
         theDirectionButtons = [[NSMutableArray alloc] init];
         theDirections = [[NSMutableArray alloc] init];
@@ -76,7 +83,8 @@
     return 1;
 }
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+- (NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component
 {
     NSMutableArray *stopsForDirection = [[NSMutableArray alloc] init];
     for (Stop *stop in theStops) {
@@ -87,15 +95,32 @@
     return [stopsForDirection count];
 }
 
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+- (NSString *)pickerView:(UIPickerView *)pickerView
+             titleForRow:(NSInteger)row
+            forComponent:(NSInteger)component
 {
     Stop *stop = [theStops objectAtIndex:row];
     return stop.name;
 }
 
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+- (void)pickerView:(UIPickerView *)pickerView
+      didSelectRow:(NSInteger)row
+       inComponent:(NSInteger)component
 {
-    
+    [thePredictor predictArrivalOnRoute:self.routeField.text
+                                 atStop:[theStops objectAtIndex:row]];
+}
+
+#pragma mark PredictionRecipient
+
+- (void)receivePrediction:(Prediction *)aPrediction
+{
+    theDateFormatter.dateFormat = @"h:mma";
+    self.nextArrivalTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 300, 320, 100)];
+    [self.nextArrivalTimeLabel setBackgroundColor:[UIColor redColor]];
+    self.nextArrivalTimeLabel.accessibilityLabel = @"Arrival Time";
+    self.nextArrivalTimeLabel.text = [theDateFormatter stringFromDate:aPrediction.date];
+    [self.view addSubview:self.nextArrivalTimeLabel];
 }
 
 #pragma mark private

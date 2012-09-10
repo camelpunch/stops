@@ -5,9 +5,11 @@
 @interface Stop : NSObject
 
 - (id)initWithName:(NSString *)aName
-         direction:(Direction *)aDirection;
+         direction:(Direction *)aDirection
+               tag:(NSString *)aTag;
 
-- (NSString *)name;
-- (Direction *)direction;
+@property (strong, nonatomic, readonly) NSString *name;
+@property (strong, nonatomic, readonly) Direction *direction;
+@property (strong, nonatomic, readonly) NSString *tag;
 
 @end

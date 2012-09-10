@@ -15,6 +15,13 @@
 		494CB60E15F1C20300152AB3 /* Stop.m in Sources */ = {isa = PBXBuildFile; fileRef = 494CB60D15F1C20300152AB3 /* Stop.m */; };
 		494CB61015F1C20300152AB3 /* Stop.m in Sources */ = {isa = PBXBuildFile; fileRef = 494CB60D15F1C20300152AB3 /* Stop.m */; };
 		494CB61415F1C79E00152AB3 /* StopSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 494CB61315F1C79E00152AB3 /* StopSpec.m */; };
+		4958F54415FC69240032A0F1 /* NextBusPredictor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4958F54315FC69230032A0F1 /* NextBusPredictor.m */; };
+		4958F54515FC69240032A0F1 /* NextBusPredictor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4958F54315FC69230032A0F1 /* NextBusPredictor.m */; };
+		4958F54815FCEB170032A0F1 /* Prediction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4958F54715FCEB170032A0F1 /* Prediction.m */; };
+		4958F54915FCEB170032A0F1 /* Prediction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4958F54715FCEB170032A0F1 /* Prediction.m */; };
+		4958F54C15FCEBA10032A0F1 /* PredictionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4958F54B15FCEBA10032A0F1 /* PredictionSpec.m */; };
+		4958F55015FCF7FC0032A0F1 /* NextBusPredictorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4958F54F15FCF7FC0032A0F1 /* NextBusPredictorSpec.m */; };
+		4958F55315FD00670032A0F1 /* FakePredictionRecipient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4958F55215FD00670032A0F1 /* FakePredictionRecipient.m */; };
 		497A5D9715F3C52F003F70EA /* ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 497A5D9615F3C52F003F70EA /* ActivityIndicator.m */; };
 		497A5D9815F3C52F003F70EA /* ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 497A5D9615F3C52F003F70EA /* ActivityIndicator.m */; };
 		497A5D9B15F3C66A003F70EA /* ActivityIndicatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 497A5D9A15F3C66A003F70EA /* ActivityIndicatorSpec.m */; };
@@ -116,6 +123,16 @@
 		494CB60C15F1C20300152AB3 /* Stop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stop.h; sourceTree = "<group>"; };
 		494CB60D15F1C20300152AB3 /* Stop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stop.m; sourceTree = "<group>"; };
 		494CB61315F1C79E00152AB3 /* StopSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopSpec.m; sourceTree = "<group>"; };
+		4958F53D15FC59FB0032A0F1 /* Predictor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Predictor.h; sourceTree = "<group>"; };
+		4958F54215FC69230032A0F1 /* NextBusPredictor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextBusPredictor.h; sourceTree = "<group>"; };
+		4958F54315FC69230032A0F1 /* NextBusPredictor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextBusPredictor.m; sourceTree = "<group>"; };
+		4958F54615FCEB170032A0F1 /* Prediction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prediction.h; sourceTree = "<group>"; };
+		4958F54715FCEB170032A0F1 /* Prediction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prediction.m; sourceTree = "<group>"; };
+		4958F54B15FCEBA10032A0F1 /* PredictionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredictionSpec.m; sourceTree = "<group>"; };
+		4958F54D15FCEC670032A0F1 /* PredictionRecipient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredictionRecipient.h; sourceTree = "<group>"; };
+		4958F54F15FCF7FC0032A0F1 /* NextBusPredictorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextBusPredictorSpec.m; sourceTree = "<group>"; };
+		4958F55115FD00670032A0F1 /* FakePredictionRecipient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakePredictionRecipient.h; sourceTree = "<group>"; };
+		4958F55215FD00670032A0F1 /* FakePredictionRecipient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakePredictionRecipient.m; sourceTree = "<group>"; };
 		497A5D9315F3BCF0003F70EA /* ActivityDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDelegate.h; sourceTree = "<group>"; };
 		497A5D9515F3C52F003F70EA /* ActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicator.h; sourceTree = "<group>"; };
 		497A5D9615F3C52F003F70EA /* ActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicator.m; sourceTree = "<group>"; };
@@ -240,6 +257,8 @@
 			children = (
 				497A5D9315F3BCF0003F70EA /* ActivityDelegate.h */,
 				4927E6E215E9B88000AADD70 /* DirectionRecipient.h */,
+				4958F53D15FC59FB0032A0F1 /* Predictor.h */,
+				4958F54D15FCEC670032A0F1 /* PredictionRecipient.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -251,6 +270,8 @@
 				49965EFF15E96069008B516D /* RouteFetcher.m */,
 				497A5D9515F3C52F003F70EA /* ActivityIndicator.h */,
 				497A5D9615F3C52F003F70EA /* ActivityIndicator.m */,
+				4958F54215FC69230032A0F1 /* NextBusPredictor.h */,
+				4958F54315FC69230032A0F1 /* NextBusPredictor.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -320,15 +341,19 @@
 			children = (
 				49EB73C015EAC8DF00A3F520 /* Fixtures */,
 				49965ED215E954F1008B516D /* Supporting Files */,
+				49EB73C615EAD0D900A3F520 /* XMLFixture.h */,
+				49EB73C715EAD0D900A3F520 /* XMLFixture.m */,
+				497B641415EAEC820050CC2A /* FakeRouteRecipient.h */,
+				497B641515EAEC820050CC2A /* FakeRouteRecipient.m */,
 				49965ED815E954F1008B516D /* NextArrivalSpec.m */,
 				4927E6D915E9B33500AADD70 /* RouteFetcherSpec.m */,
 				493CC8E815E9C31A0056A257 /* DirectionSpec.m */,
 				494CB61315F1C79E00152AB3 /* StopSpec.m */,
 				497A5D9A15F3C66A003F70EA /* ActivityIndicatorSpec.m */,
-				49EB73C615EAD0D900A3F520 /* XMLFixture.h */,
-				49EB73C715EAD0D900A3F520 /* XMLFixture.m */,
-				497B641415EAEC820050CC2A /* FakeRouteRecipient.h */,
-				497B641515EAEC820050CC2A /* FakeRouteRecipient.m */,
+				4958F54B15FCEBA10032A0F1 /* PredictionSpec.m */,
+				4958F54F15FCF7FC0032A0F1 /* NextBusPredictorSpec.m */,
+				4958F55115FD00670032A0F1 /* FakePredictionRecipient.h */,
+				4958F55215FD00670032A0F1 /* FakePredictionRecipient.m */,
 			);
 			path = StopsTests;
 			sourceTree = "<group>";
@@ -400,6 +425,8 @@
 				499CEFF615E99D29000AECBF /* Direction.m */,
 				494CB60C15F1C20300152AB3 /* Stop.h */,
 				494CB60D15F1C20300152AB3 /* Stop.m */,
+				4958F54615FCEB170032A0F1 /* Prediction.h */,
+				4958F54715FCEB170032A0F1 /* Prediction.m */,
 			);
 			name = Values;
 			sourceTree = "<group>";
@@ -603,6 +630,8 @@
 				499CEFF715E99D29000AECBF /* Direction.m in Sources */,
 				494CB60E15F1C20300152AB3 /* Stop.m in Sources */,
 				497A5D9715F3C52F003F70EA /* ActivityIndicator.m in Sources */,
+				4958F54415FC69240032A0F1 /* NextBusPredictor.m in Sources */,
+				4958F54815FCEB170032A0F1 /* Prediction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +646,9 @@
 				497B641615EAEC820050CC2A /* FakeRouteRecipient.m in Sources */,
 				494CB61415F1C79E00152AB3 /* StopSpec.m in Sources */,
 				497A5D9B15F3C66A003F70EA /* ActivityIndicatorSpec.m in Sources */,
+				4958F54C15FCEBA10032A0F1 /* PredictionSpec.m in Sources */,
+				4958F55015FCF7FC0032A0F1 /* NextBusPredictorSpec.m in Sources */,
+				4958F55315FD00670032A0F1 /* FakePredictionRecipient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +669,8 @@
 				499CEFF915E99D29000AECBF /* Direction.m in Sources */,
 				494CB61015F1C20300152AB3 /* Stop.m in Sources */,
 				497A5D9815F3C52F003F70EA /* ActivityIndicator.m in Sources */,
+				4958F54515FC69240032A0F1 /* NextBusPredictor.m in Sources */,
+				4958F54915FCEB170032A0F1 /* Prediction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

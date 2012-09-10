@@ -30,11 +30,14 @@ describe(@"fetching a named route", ^{
     
     pending_(@"sends Stop values to the delegate", ^{
         Stop *chestnutAndFillmore = [[Stop alloc] initWithName:@"Chestnut St & Fillmore St"
-                                                     direction:outbound];
+                                                     direction:outbound
+                                                           tag:@"3941"];
         Stop *masonicAndGeary = [[Stop alloc] initWithName:@"Masonic Ave & Geary Blvd"
-                                                 direction:outbound];
+                                                 direction:outbound
+                                                       tag:@"5710"];
         Stop *southHillAndRolph = [[Stop alloc] initWithName:@"South Hill Blvd & Rolph St"
-                                                   direction:inbound];
+                                                   direction:inbound
+                                                         tag:@"345"];
         
         [recipient expectStop:chestnutAndFillmore];
         [recipient expectStop:masonicAndGeary];

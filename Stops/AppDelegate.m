@@ -3,6 +3,7 @@
 #import "RouteFetcher.h"
 #import "StopsActivityIndicatorView.h"
 #import "ActivityIndicator.h"
+#import "NextBusPredictor.h"
 
 #if RUN_KIF_TESTS
 #import "STestController.h"
@@ -15,8 +16,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     RouteFetcher *fetcher = [[RouteFetcher alloc] init];
+    NextBusPredictor *predictor = [[NextBusPredictor alloc] init];
     NextArrivalViewController *nextArrivalViewController =
     [[NextArrivalViewController alloc] initWithRouteFetcher:fetcher
+                                                  predictor:predictor
                                   directionButtonDimensions:CGRectMake(10, 240, 300, 40)
                                     directionButtonYPadding:10];
     
@@ -25,6 +28,8 @@
      [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge]];
     
     fetcher.delegate = nextArrivalViewController;
+    predictor.delegate = nextArrivalViewController;
+    
     self.window.rootViewController = nextArrivalViewController;
     
     self.window.backgroundColor = [UIColor whiteColor];

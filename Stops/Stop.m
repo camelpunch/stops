@@ -2,33 +2,31 @@
 #import "Direction.h"
 
 @implementation Stop
-{
-    NSString *theName;
-    Direction *theDirection;
-}
+@synthesize name, direction, tag;
 
 - (id)initWithName:(NSString *)aName
          direction:(Direction *)aDirection
+               tag:(NSString *)aTag
 {
     self = [super init];
     if (self) {
-        theName = aName;
-        theDirection = aDirection;
+        name = aName;
+        direction = aDirection;
+        tag = aTag;
     }
     return self;
 }
 
-- (NSString *)name { return theName; }
-- (Direction *)direction { return theDirection; }
-
 - (BOOL)isEqual:(Stop *)other
 {
-    return [theName isEqual:other.name] && [theDirection isEqual:other.direction];
+    return [self.name isEqual:other.name] &&
+    [self.direction isEqual:other.direction] &&
+    [self.tag isEqualToString:other.tag];
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"Stop: <%@> Direction: <%@>", theName, theDirection.name];
+    return [NSString stringWithFormat:@"Stop: <%@> Direction: <%@>", self.name, self.direction.name];
 }
 
 @end
