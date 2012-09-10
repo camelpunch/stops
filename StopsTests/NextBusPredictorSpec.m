@@ -1,17 +1,27 @@
 #import "Kiwi.h"
-#import <OCMockObject.h>
+#import <OCMock.h>
 #import "NextBusPredictor.h"
 #import "PredictionRecipient.h"
-#import "FakePredictionRecipient.h"
 #import "Stop.h"
 #import "Direction.h"
+
+@interface PredictionRecipientSpy : NSObject<PredictionRecipient>
+@property (strong, nonatomic) Prediction *receivedPrediction;
+@end
+
+@implementation PredictionRecipientSpy
+- (void)receivePrediction:(Prediction *)aPrediction
+{
+    self.receivedPrediction = aPrediction;
+}
+@end
 
 SPEC_BEGIN(NextBusPredictorSpec)
 
 describe(@"NextBus predictor", ^{
     describe(@"a valid request", ^{
         it(@"calls the delegate with a prediction for a route and stop", ^{
-            FakePredictionRecipient *recipient = [[FakePredictionRecipient alloc] init];
+            PredictionRecipientSpy *recipient = [[PredictionRecipientSpy alloc] init];
             NextBusPredictor *predictor = [[NextBusPredictor alloc] init];
             predictor.delegate = recipient;
             
@@ -31,7 +41,7 @@ describe(@"NextBus predictor", ^{
     
     describe(@"an invalid request", ^{
         it(@"does not call the delegate with a prediction", ^{
-            FakePredictionRecipient *recipient = [[FakePredictionRecipient alloc] init];
+            PredictionRecipientSpy *recipient = [[PredictionRecipientSpy alloc] init];
             NextBusPredictor *predictor = [[NextBusPredictor alloc] init];
             predictor.delegate = recipient;
             

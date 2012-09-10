@@ -21,7 +21,6 @@
 		4958F54915FCEB170032A0F1 /* Prediction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4958F54715FCEB170032A0F1 /* Prediction.m */; };
 		4958F54C15FCEBA10032A0F1 /* PredictionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4958F54B15FCEBA10032A0F1 /* PredictionSpec.m */; };
 		4958F55015FCF7FC0032A0F1 /* NextBusPredictorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4958F54F15FCF7FC0032A0F1 /* NextBusPredictorSpec.m */; };
-		4958F55315FD00670032A0F1 /* FakePredictionRecipient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4958F55215FD00670032A0F1 /* FakePredictionRecipient.m */; };
 		497A5D9715F3C52F003F70EA /* ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 497A5D9615F3C52F003F70EA /* ActivityIndicator.m */; };
 		497A5D9815F3C52F003F70EA /* ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 497A5D9615F3C52F003F70EA /* ActivityIndicator.m */; };
 		497A5D9B15F3C66A003F70EA /* ActivityIndicatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 497A5D9A15F3C66A003F70EA /* ActivityIndicatorSpec.m */; };
@@ -131,8 +130,6 @@
 		4958F54B15FCEBA10032A0F1 /* PredictionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredictionSpec.m; sourceTree = "<group>"; };
 		4958F54D15FCEC670032A0F1 /* PredictionRecipient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredictionRecipient.h; sourceTree = "<group>"; };
 		4958F54F15FCF7FC0032A0F1 /* NextBusPredictorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextBusPredictorSpec.m; sourceTree = "<group>"; };
-		4958F55115FD00670032A0F1 /* FakePredictionRecipient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakePredictionRecipient.h; sourceTree = "<group>"; };
-		4958F55215FD00670032A0F1 /* FakePredictionRecipient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakePredictionRecipient.m; sourceTree = "<group>"; };
 		497A5D9315F3BCF0003F70EA /* ActivityDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDelegate.h; sourceTree = "<group>"; };
 		497A5D9515F3C52F003F70EA /* ActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicator.h; sourceTree = "<group>"; };
 		497A5D9615F3C52F003F70EA /* ActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicator.m; sourceTree = "<group>"; };
@@ -352,8 +349,6 @@
 				497A5D9A15F3C66A003F70EA /* ActivityIndicatorSpec.m */,
 				4958F54B15FCEBA10032A0F1 /* PredictionSpec.m */,
 				4958F54F15FCF7FC0032A0F1 /* NextBusPredictorSpec.m */,
-				4958F55115FD00670032A0F1 /* FakePredictionRecipient.h */,
-				4958F55215FD00670032A0F1 /* FakePredictionRecipient.m */,
 			);
 			path = StopsTests;
 			sourceTree = "<group>";
@@ -648,7 +643,6 @@
 				497A5D9B15F3C66A003F70EA /* ActivityIndicatorSpec.m in Sources */,
 				4958F54C15FCEBA10032A0F1 /* PredictionSpec.m in Sources */,
 				4958F55015FCF7FC0032A0F1 /* NextBusPredictorSpec.m in Sources */,
-				4958F55315FD00670032A0F1 /* FakePredictionRecipient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
