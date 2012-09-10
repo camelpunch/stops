@@ -29,6 +29,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             controller.routeField.text = @"22";
             [[routeFetcher expect] fetchRoute:@"22"];
             [controller.findButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+            [routeFetcher verify];
         });
         
         it(@"notifies the activity delegate", ^{
