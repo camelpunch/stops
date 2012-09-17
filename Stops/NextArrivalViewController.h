@@ -7,10 +7,9 @@
 @protocol ActivityDelegate;
 @protocol Predictor;
 
-@interface NextArrivalViewController : UIViewController<UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,RouteRecipient,PredictionRecipient>
+@interface NextArrivalViewController : UIViewController<UISearchBarDelegate,UIPickerViewDelegate,UIPickerViewDataSource,RouteRecipient,PredictionRecipient>
 
-@property (strong, nonatomic) UIButton *findButton;
-@property (strong, nonatomic) UITextField *routeField;
+@property (strong, nonatomic) UISearchBar *routeField;
 @property (strong, nonatomic) UILabel *nextArrivalTimeLabel;
 @property (weak, nonatomic) id<ActivityDelegate> activityDelegate;
 

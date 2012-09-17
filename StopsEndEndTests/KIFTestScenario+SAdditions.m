@@ -13,11 +13,9 @@
      [KIFTestStep stepToReset]];
     
     [scenario addStep:
-     [KIFTestStep stepToEnterText:@"22"
+     [KIFTestStep stepToEnterText:@"22\n"
    intoViewWithAccessibilityLabel:@"Enter Route"]];
     
-    [scenario addStep:
-     [KIFTestStep stepToTapViewWithAccessibilityLabel:@"Find"]];
     [scenario addStep:
      [KIFTestStep stepToTapViewWithAccessibilityLabel:@"Outbound to Potrero Hill"]];
     [scenario addStep:

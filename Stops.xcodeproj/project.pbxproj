@@ -53,10 +53,6 @@
 		49965F2715E9686F008B516D /* KIFTestStep+SAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965F2615E9686F008B516D /* KIFTestStep+SAdditions.m */; };
 		499CEFF715E99D29000AECBF /* Direction.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEFF615E99D29000AECBF /* Direction.m */; };
 		499CEFF915E99D29000AECBF /* Direction.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEFF615E99D29000AECBF /* Direction.m */; };
-		49A1718415E9979F008ED4C9 /* RouteField.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A1718315E9979F008ED4C9 /* RouteField.m */; };
-		49A1718615E9979F008ED4C9 /* RouteField.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A1718315E9979F008ED4C9 /* RouteField.m */; };
-		49A1718915E99872008ED4C9 /* MainSubmitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A1718815E99872008ED4C9 /* MainSubmitButton.m */; };
-		49A1718B15E99872008ED4C9 /* MainSubmitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A1718815E99872008ED4C9 /* MainSubmitButton.m */; };
 		49EB73C515EAD06200A3F520 /* 43directionsresponse.xml in Resources */ = {isa = PBXBuildFile; fileRef = 49EB73C115EAC8F500A3F520 /* 43directionsresponse.xml */; };
 		49EB73C815EAD0D900A3F520 /* XMLFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EB73C715EAD0D900A3F520 /* XMLFixture.m */; };
 /* End PBXBuildFile section */
@@ -167,10 +163,6 @@
 		49965F2615E9686F008B516D /* KIFTestStep+SAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "KIFTestStep+SAdditions.m"; path = "StopsEndEndTests/KIFTestStep+SAdditions.m"; sourceTree = "<group>"; };
 		499CEFF515E99D29000AECBF /* Direction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Direction.h; sourceTree = "<group>"; };
 		499CEFF615E99D29000AECBF /* Direction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Direction.m; sourceTree = "<group>"; };
-		49A1718215E9979F008ED4C9 /* RouteField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteField.h; sourceTree = "<group>"; };
-		49A1718315E9979F008ED4C9 /* RouteField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteField.m; sourceTree = "<group>"; };
-		49A1718715E99872008ED4C9 /* MainSubmitButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSubmitButton.h; sourceTree = "<group>"; };
-		49A1718815E99872008ED4C9 /* MainSubmitButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSubmitButton.m; sourceTree = "<group>"; };
 		49EB73C115EAC8F500A3F520 /* 43directionsresponse.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 43directionsresponse.xml; sourceTree = "<group>"; };
 		49EB73C615EAD0D900A3F520 /* XMLFixture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLFixture.h; sourceTree = "<group>"; };
 		49EB73C715EAD0D900A3F520 /* XMLFixture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLFixture.m; sourceTree = "<group>"; };
@@ -241,10 +233,6 @@
 			children = (
 				493809DE15E995D600CAD3F1 /* StopsActivityIndicatorView.h */,
 				493809DF15E995D600CAD3F1 /* StopsActivityIndicatorView.m */,
-				49A1718215E9979F008ED4C9 /* RouteField.h */,
-				49A1718315E9979F008ED4C9 /* RouteField.m */,
-				49A1718715E99872008ED4C9 /* MainSubmitButton.h */,
-				49A1718815E99872008ED4C9 /* MainSubmitButton.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -620,8 +608,6 @@
 				49965EFB15E95C4D008B516D /* NextArrivalViewController.m in Sources */,
 				49965F0015E96069008B516D /* NextBusRouteFetcher.m in Sources */,
 				493809E015E995D600CAD3F1 /* StopsActivityIndicatorView.m in Sources */,
-				49A1718415E9979F008ED4C9 /* RouteField.m in Sources */,
-				49A1718915E99872008ED4C9 /* MainSubmitButton.m in Sources */,
 				499CEFF715E99D29000AECBF /* Direction.m in Sources */,
 				494CB60E15F1C20300152AB3 /* Stop.m in Sources */,
 				497A5D9715F3C52F003F70EA /* ActivityIndicator.m in Sources */,
@@ -658,8 +644,6 @@
 				49965F2415E9678F008B516D /* KIFTestScenario+SAdditions.m in Sources */,
 				49965F2715E9686F008B516D /* KIFTestStep+SAdditions.m in Sources */,
 				493809E215E995D600CAD3F1 /* StopsActivityIndicatorView.m in Sources */,
-				49A1718615E9979F008ED4C9 /* RouteField.m in Sources */,
-				49A1718B15E99872008ED4C9 /* MainSubmitButton.m in Sources */,
 				499CEFF915E99D29000AECBF /* Direction.m in Sources */,
 				494CB61015F1C20300152AB3 /* Stop.m in Sources */,
 				497A5D9815F3C52F003F70EA /* ActivityIndicator.m in Sources */,

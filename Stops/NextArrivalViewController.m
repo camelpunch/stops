@@ -2,8 +2,6 @@
 #import "NextBusRouteFetcher.h"
 #import "Direction.h"
 #import "StopsActivityIndicatorView.h"
-#import "RouteField.h"
-#import "MainSubmitButton.h"
 #import "Stop.h"
 #import "ActivityDelegate.h"
 #import "Predictor.h"
@@ -24,7 +22,6 @@
     CGFloat theButtonYPadding;
     NSArray *theStops;
 }
-@synthesize findButton;
 @synthesize routeField;
 @synthesize activityDelegate;
 
@@ -56,8 +53,11 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor grayColor]];
     [self createRouteField];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
     [self.routeField becomeFirstResponder];
-    [self createFindButton];
 }
 
 - (void)addDirection:(Direction *)direction
@@ -127,14 +127,6 @@ numberOfRowsInComponent:(NSInteger)component
 
 #pragma mark clicks
 
-- (void)findButtonClicked
-{
-    [self.activityDelegate activityStartedOnView:self.view];
-    [self removeDirectionButtons];
-    [self.view endEditing:NO];
-    [theRouteFetcher fetchRoute:self.routeField.text];
-}
-
 - (void)directionButtonClicked:(UIButton *)aButton
 {
     [self.activityDelegate activityStartedOnView:self.view];
@@ -180,18 +172,20 @@ numberOfRowsInComponent:(NSInteger)component
 
 - (void)createRouteField
 {
-    self.routeField = [[RouteField alloc] init];
+    self.routeField = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    self.routeField.placeholder = @"Route Name";
+    self.routeField.accessibilityLabel = @"Enter Route";
+    self.routeField.autocorrectionType = UITextAutocorrectionTypeNo;
+    self.routeField.keyboardType = UIKeyboardTypeDefault;
     self.routeField.delegate = self;
     [self.view addSubview:self.routeField];
 }
 
-- (void)createFindButton
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    self.findButton = [[MainSubmitButton alloc] init];
-    [self.findButton addTarget:self
-                        action:@selector(findButtonClicked)
-              forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.findButton];
+//    [self.activityDelegate activityStartedOnView:self.view];
+    [self removeDirectionButtons];
+    [theRouteFetcher fetchRoute:self.routeField.text];
 }
 
 @end

@@ -16,8 +16,8 @@ static NSUInteger const UNUSED_PADDING = 0;
 
 SPEC_BEGIN(NextArrivalSpec)
 
-describe(@"getting the next arrival for a stop in a chosen direction", ^{      
-    describe(@"tapping find", ^{      
+describe(@"getting the next arrival for a stop in a chosen direction", ^{
+    describe(@"tapping search", ^{
         it(@"retrieves directions for the route entered", ^{
             id routeFetcher = [OCMockObject mockForClass:[NextBusRouteFetcher class]];
             NextArrivalViewController *controller =
@@ -27,8 +27,9 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
                                             directionButtonYPadding:UNUSED_PADDING];
             [controller view];
             controller.routeField.text = @"22";
+            
             [[routeFetcher expect] fetchRoute:@"22"];
-            [controller.findButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+            [controller searchBarSearchButtonClicked:controller.routeField];
             [routeFetcher verify];
         });
         
@@ -38,13 +39,12 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
                                                           predictor:UNUSED_PREDICTOR
                                           directionButtonDimensions:UNUSED_DIMENSIONS
                                             directionButtonYPadding:UNUSED_PADDING];
-            [controller view];
+            UIView *view = controller.view;
             __weak id delegate = [OCMockObject mockForProtocol:@protocol(ActivityDelegate)];
             controller.activityDelegate = delegate;
             
-            [[controller.findButton shouldNot] beNil];
-            [[delegate expect] activityStartedOnView:controller.view];
-            [controller.findButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+            [[delegate expect] activityStartedOnView:view];
+            [controller searchBarSearchButtonClicked:controller.routeField];
             [delegate verify];
         });
         
@@ -61,7 +61,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             UIView *anotherView = [[UIView alloc] init];
             [view addSubview:anotherView];
                         
-            [controller.findButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+            [controller searchBarSearchButtonClicked:controller.routeField];
             [[view.subviews should] contain:anotherView];
             [[view.subviews shouldNot] contain:directionButton];
         });
@@ -107,7 +107,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
              equal:theValue(firstButton.frame.origin.y + firstButton.frame.size.height + padding)];
         });
         
-        it(@"resets the vertical position of new buttons when find has been pressed", ^{
+        it(@"resets the vertical position of new buttons when new search has been made", ^{
             CGFloat verticalPosition = 15;
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
@@ -116,7 +116,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
                                             directionButtonYPadding:UNUSED_PADDING];
             [controller addDirection:[[Direction alloc] init]];
             [controller addDirection:[[Direction alloc] init]];
-            [controller.findButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+            [controller searchBarSearchButtonClicked:controller.routeField];
             [controller addDirection:[[Direction alloc] init]];            
             UIButton *button = [controller.view.subviews lastObject];
             [[theValue(button.frame.origin.y) should] equal:theValue(verticalPosition)];
