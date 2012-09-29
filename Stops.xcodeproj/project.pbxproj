@@ -155,7 +155,6 @@
 		49965EFF15E96069008B516D /* NextBusRouteFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextBusRouteFetcher.m; sourceTree = "<group>"; };
 		49965F0215E9665D008B516D /* KIF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KIF.xcodeproj; path = Frameworks/KIF/KIF.xcodeproj; sourceTree = "<group>"; };
 		49965F1A15E9666D008B516D /* StopsEndEndTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopsEndEndTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		49965F1C15E9666E008B516D /* Stops copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Stops copy-Info.plist"; path = "/Users/andrew/dev/Stops/Stops copy-Info.plist"; sourceTree = "<absolute>"; };
 		49965F1F15E9673F008B516D /* STestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STestController.h; path = StopsEndEndTests/STestController.h; sourceTree = "<group>"; };
 		49965F2015E9673F008B516D /* STestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STestController.m; path = StopsEndEndTests/STestController.m; sourceTree = "<group>"; };
 		49965F2215E9678F008B516D /* KIFTestScenario+SAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KIFTestScenario+SAdditions.h"; path = "StopsEndEndTests/KIFTestScenario+SAdditions.h"; sourceTree = "<group>"; };
@@ -271,7 +270,6 @@
 				49965F1E15E96712008B516D /* StopsEndEndTests */,
 				49965EB215E954F1008B516D /* Frameworks */,
 				49965EB015E954F1008B516D /* Products */,
-				49965F1C15E9666E008B516D /* Stops copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
