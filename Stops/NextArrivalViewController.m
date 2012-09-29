@@ -27,8 +27,6 @@
 
 - (id)initWithRouteFetcher:(NextBusRouteFetcher *)aRouteFetcher
                  predictor:(id<Predictor>)aPredictor
- directionButtonDimensions:(CGRect)directionButtonDimensions
-   directionButtonYPadding:(CGFloat)directionButtonYPadding
 {
     self = [super init];
     if (self) {
@@ -39,11 +37,12 @@
         theDirectionButtons = [[NSMutableArray alloc] init];
         theDirections = [[NSMutableArray alloc] init];
         theStops = [[NSArray alloc] init];
+        CGRect directionButtonDimensions = CGRectMake(10, 60, 300, 40);
         theButtonStartX = CGRectGetMinX(directionButtonDimensions);
         theButtonStartY = CGRectGetMinY(directionButtonDimensions);
         theButtonWidth = CGRectGetWidth(directionButtonDimensions);
         theButtonHeight = CGRectGetHeight(directionButtonDimensions);
-        theButtonYPadding = directionButtonYPadding;
+        theButtonYPadding = 10;
     }
     return self;
 }

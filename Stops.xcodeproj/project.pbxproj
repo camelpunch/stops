@@ -51,6 +51,7 @@
 		49965F2115E9673F008B516D /* STestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965F2015E9673F008B516D /* STestController.m */; };
 		49965F2415E9678F008B516D /* KIFTestScenario+SAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965F2315E9678F008B516D /* KIFTestScenario+SAdditions.m */; };
 		49965F2715E9686F008B516D /* KIFTestStep+SAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 49965F2615E9686F008B516D /* KIFTestStep+SAdditions.m */; };
+		499C905E1617845800A7934D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49965EB715E954F1008B516D /* CoreGraphics.framework */; };
 		499CEFF715E99D29000AECBF /* Direction.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEFF615E99D29000AECBF /* Direction.m */; };
 		499CEFF915E99D29000AECBF /* Direction.m in Sources */ = {isa = PBXBuildFile; fileRef = 499CEFF615E99D29000AECBF /* Direction.m */; };
 		49EB73C515EAD06200A3F520 /* 43directionsresponse.xml in Resources */ = {isa = PBXBuildFile; fileRef = 49EB73C115EAC8F500A3F520 /* 43directionsresponse.xml */; };
@@ -183,6 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				499C905E1617845800A7934D /* CoreGraphics.framework in Frameworks */,
 				49965EF715E95B94008B516D /* libKiwi.a in Frameworks */,
 				49965ECC15E954F1008B516D /* SenTestingKit.framework in Frameworks */,
 				49965ECD15E954F1008B516D /* UIKit.framework in Frameworks */,

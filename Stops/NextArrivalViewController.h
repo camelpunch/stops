@@ -14,8 +14,6 @@
 @property (weak, nonatomic) id<ActivityDelegate> activityDelegate;
 
 - (id)initWithRouteFetcher:(NextBusRouteFetcher *)aRouteFetcher
-                 predictor:(id<Predictor>)aPredictor
- directionButtonDimensions:(CGRect)directionButtonDimensions
-   directionButtonYPadding:(CGFloat)directionButtonYPadding;
+                 predictor:(id<Predictor>)aPredictor;
 
 @end

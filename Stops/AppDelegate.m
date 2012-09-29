@@ -19,9 +19,7 @@
     NextBusPredictor *predictor = [[NextBusPredictor alloc] init];
     NextArrivalViewController *nextArrivalViewController =
     [[NextArrivalViewController alloc] initWithRouteFetcher:fetcher
-                                                  predictor:predictor
-                                  directionButtonDimensions:CGRectMake(10, 240, 300, 40)
-                                    directionButtonYPadding:10];
+                                                  predictor:predictor];
     
     nextArrivalViewController.activityDelegate =
     [[ActivityIndicator alloc] initWithIndicatorView:
