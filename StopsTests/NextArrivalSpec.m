@@ -28,13 +28,13 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             [controller searchBarSearchButtonClicked:controller.routeField];
             [routeFetcher verify];
         });
-        
+
         it(@"notifies the activity delegate", ^{
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
                                                           predictor:UNUSED_PREDICTOR];
             UIView *view = controller.view;
-            __weak id delegate = [OCMockObject mockForProtocol:@protocol(ActivityDelegate)];
+            id delegate = [OCMockObject mockForProtocol:@protocol(ActivityDelegate)];
             controller.activityDelegate = delegate;
             
             [[delegate expect] activityStartedOnView:view];
@@ -64,7 +64,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
                                                           predictor:UNUSED_PREDICTOR];
-            __weak id delegate = [OCMockObject mockForProtocol:@protocol(ActivityDelegate)];
+            id delegate = [OCMockObject mockForProtocol:@protocol(ActivityDelegate)];
             controller.activityDelegate = delegate;
             [[delegate expect] activityStoppedOnView:controller.view];
             [controller addDirection:[Direction directionNamed:@"outbound"]];
@@ -118,7 +118,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             UIView *view = controller.view;
             [controller addDirection:[[Direction alloc] init]];
             UIButton *button = [view.subviews lastObject];
-            __weak id delegate = [OCMockObject mockForProtocol:@protocol(ActivityDelegate)];
+            id delegate = [OCMockObject mockForProtocol:@protocol(ActivityDelegate)];
             controller.activityDelegate = delegate;
             
             [[delegate expect] activityStartedOnView:controller.view];
@@ -147,7 +147,7 @@ describe(@"getting the next arrival for a stop in a chosen direction", ^{
             NextArrivalViewController *controller =
             [[NextArrivalViewController alloc] initWithRouteFetcher:UNUSED_FETCHER
                                                           predictor:UNUSED_PREDICTOR];
-            __weak id delegate = [OCMockObject mockForProtocol:@protocol(ActivityDelegate)];
+            id delegate = [OCMockObject mockForProtocol:@protocol(ActivityDelegate)];
             controller.activityDelegate = delegate;
 
             [[delegate expect] activityStoppedOnView:controller.view];

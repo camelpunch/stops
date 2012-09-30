@@ -182,7 +182,7 @@ numberOfRowsInComponent:(NSInteger)component
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-//    [self.activityDelegate activityStartedOnView:self.view];
+    [self.activityDelegate activityStartedOnView:self.view];
     [self removeDirectionButtons];
     [theRouteFetcher fetchRoute:self.routeField.text];
 }

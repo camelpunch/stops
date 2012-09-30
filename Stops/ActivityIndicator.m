@@ -16,7 +16,7 @@
 
 - (void)activityStartedOnView:(UIView *)aView
 {
-    theIndicatorView.center = CGPointMake(aView.center.x, 20);
+    theIndicatorView.center = CGPointMake(aView.center.x, 140);
     [aView addSubview:theIndicatorView];
     [theIndicatorView startAnimating];
 }
